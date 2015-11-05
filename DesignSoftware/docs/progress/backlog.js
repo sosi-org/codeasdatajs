@@ -119,7 +119,7 @@ users = "antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hic
 
 var mode = "essential";
 
-j12=todo("remove use of dep argument from init_updateannotation", "Dont remove the dep argument yet");
+j12=todo("remove use of @dep argument from @init_updateannotation", "Dont remove the dep argument yet");
 
 j14=todo(
     "Refector the root for 1-multiple instances, 2-include print settings, 3-include constraints, 4-include tools, 5-include metadata (owner,time,version)")
