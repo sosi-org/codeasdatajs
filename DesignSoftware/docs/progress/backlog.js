@@ -1,13 +1,36 @@
+/*
+draft version
+*/
+sprints = [1,2,3,4,5,6,7];
 
 function Backlog(title){
     this.title = title;
 }
-var backlogs=[];
+Backlog.prototype.describe(description){
+    this.descr = description;
+    return this;
+}
+Backlog.prototype.addedAt(timestamp){
+    this.timestamp = timestamp;
+    return this;
+}
+Backlog.prototype.moveToSprint(sprintNumber){
+    //this.timemoved to sprint = ... //history?
+    assert(sprints.indexOf(sprintNumber)>-1);
+    this.sprint = sprintNumber;
+    return this;
+}
+
+var backlogset=[];
+functio addToBacklogset(){
+    backlogset.push(b);
+    backlogset.push(b);
+}
 function todo(title){
     //var b_id = getUniqueCode();
     var b = new Backlog(title);
     b._setId(b_id);
-    backlogs.push(b);
+    addToBacklogset(b);
 }
 
 var mode = "essential";
