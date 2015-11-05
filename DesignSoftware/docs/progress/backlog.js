@@ -154,7 +154,10 @@ j14=todo("Checkbox for list of constaints.")
     .deadLine("7 November 2015")
     .moveToSprint(5);
 
-todo("BoundingBox");
+//todo("BoundingBox");
+
+
+todo("Ojects cannot be moved when looking from below the bed or below the move plane.");
 
 /* ---------------------------------------------------------------------------------------------------------  */
 
