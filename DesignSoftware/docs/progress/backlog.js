@@ -49,9 +49,10 @@ Backlog.prototype.assignTo = function(person, when){
     return this;
 }
 
-Backlog.prototype.moveToSprint = function(sprintNumber){
+Backlog.prototype.setSprint = function(sprintNumber){
     //this.timemoved to sprint = ... //history?
     assert(sprints.indexOf(sprintNumber)>-1, "sprint number is invalid");
+    console.log("Task moved from sprint "+this.sprint+" to "+sprintNumber);
     this.sprint = sprintNumber;
     return this;
 }
@@ -64,6 +65,19 @@ Backlog.prototype.moreInfoNeeded = function(){
     //this.incompleteInformation = true;
     return this;
 }
+// .why
+//Backlog.prototype.why = function(){}
+
+Backlog.prototype.id = function(new_id){
+    this.id = new_id;
+    return this;
+}
+Backlog.prototype.toBacklog = function(){
+    console.log("Task moved to backlog");
+    this.sprint = 0;
+    return this;
+}
+
 
 var backlogset=[];
 function addToBacklogset(b){
@@ -156,7 +170,7 @@ j14=todo("Checkbox for list of constaints.")
     .moreInfo("high-level description")
     .addedAt("11:00am 5 Nov 2015")
     .deadLine("7 November 2015")
-    .moveToSprint(5);
+    .setSprint(5);
 
 //todo("BoundingBox");
 
@@ -165,8 +179,12 @@ todo("Ojects cannot be moved when looking from below the bed or below the move p
 
 todo("Proper shadow.").moreInfo("According to a threejs demo ...").assignTo("sohail", "5 Nov 2015").moreInfoNeeded();
 
-todo("Proper shadow.");
+todo("Proper shadow. On all objects. Disable in low-performance mode.");
 
+todo("KKT for constraints").setSprint(7).toBacklog();
+
+
+todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox").id("shape.bb");
 
 /* ---------------------------------------------------------------------------------------------------------  */
 
