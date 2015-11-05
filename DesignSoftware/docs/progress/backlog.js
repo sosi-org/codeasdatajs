@@ -22,6 +22,7 @@ assert = function(x, message){
 
 function Backlog(title){
     this.title = title;
+    this.attachments = [];
 };
 Backlog.prototype.moreInfo = function(description){
     this.descr = description;
@@ -52,7 +53,8 @@ Backlog.prototype.assignTo = function(person, when){
 Backlog.prototype.setSprint = function(sprintNumber){
     //this.timemoved to sprint = ... //history?
     assert(sprints.indexOf(sprintNumber)>-1, "sprint number is invalid");
-    console.log("Task moved from sprint "+this.sprint+" to "+sprintNumber);
+    if(this.sprint)
+        console.log("Task moved from sprint "+this.sprint+" to "+sprintNumber);
     this.sprint = sprintNumber;
     return this;
 }
@@ -67,6 +69,10 @@ Backlog.prototype.moreInfoNeeded = function(){
 }
 // .why
 //Backlog.prototype.why = function(){}
+Backlog.prototype.attachInfo = function(text){
+    this.attachments.push(text);
+    return this;
+}
 
 Backlog.prototype.id = function(new_id){
     this.id = new_id;
@@ -199,5 +205,4 @@ todo("Switch to newest ThreeJS").id("threejs.upgrade");
 
 print_all("essential");
 var e = document.getElementById("sprintNumber");
-console.log(e.innerHTML);
 e.innerHTML = ""+activeSprint;
