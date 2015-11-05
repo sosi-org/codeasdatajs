@@ -60,6 +60,10 @@ Backlog.prototype.getBrief = function(timestamp){
     return this.title + " " + (this.descr?this.descr:"");
 }
 
+Backlog.prototype.moreInfoNeeded = function(){
+    //this.incompleteInformation = true;
+    return this;
+}
 
 var backlogset=[];
 function addToBacklogset(b){
@@ -158,6 +162,11 @@ j14=todo("Checkbox for list of constaints.")
 
 
 todo("Ojects cannot be moved when looking from below the bed or below the move plane.");
+
+todo("Proper shadow.").moreInfo("According to a threejs demo ...").assignTo("sohail", "5 Nov 2015").moreInfoNeeded();
+
+todo("Proper shadow.");
+
 
 /* ---------------------------------------------------------------------------------------------------------  */
 
