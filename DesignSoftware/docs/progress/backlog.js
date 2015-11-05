@@ -1,10 +1,14 @@
 /*
-draft version
-*/
-var sprints = [];
+draft version of a task management system.
+A replacement for JIRA!
 
-sprints = [1,2,3,4,5,6,7];
-users = "antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham";
+"Code is data".
+*/
+/* */
+/* ---------------------------------------------------------------------- */
+/* Model */
+var sprints = [];
+var users = [];
 
 assert = function(x, message){
 	if(!x){
@@ -67,6 +71,12 @@ function todo(title){
     return b;
 }
 
+/* ---------------------------------------------------------------------- */
+/* Data */
+
+sprints = [1,2,3,4,5,6,7];
+users = "antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham";
+
 var mode = "essential";
 
 j12=todo("remove use of dep argument from init_updateannotation", "Dont remove the dep argument yet");
@@ -100,6 +110,8 @@ j14=todo("Checkbox for list of constaints.")
 
 print_all("essential");
 
+/* ---------------------------------------------------------------------- */
+/* View */
 
 function print_some( whichones ){
     var ctr;
