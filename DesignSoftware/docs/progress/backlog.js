@@ -182,7 +182,8 @@ j14=todo("Checkbox for list of constaints.")
 
 todo("Ojects cannot be moved when looking from below the bed or below the move plane.");
 
-todo("Proper shadow.").moreInfo("According to a threejs demo ...").assignTo("sohail", "5 Nov 2015").moreInfoNeeded();
+todo("Proper shadow.").moreInfo("According to a threejs demo ...").assignTo("sohail", "5 Nov 2015").moreInfoNeeded()
+.attachInfo("check: http://threejs.org/examples/#webgl_interactive_draggablecubes");
 
 todo("Proper shadow. On all objects. Disable in low-performance mode.");
 
@@ -190,6 +191,9 @@ todo("KKT for constraints").setSprint(7).toBacklog();
 
 
 todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox").id("shape.bb");
+
+todo("Switch to newest ThreeJS").id("threejs.upgrade");
+
 
 /* ---------------------------------------------------------------------------------------------------------  */
 
