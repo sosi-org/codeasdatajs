@@ -71,44 +71,6 @@ function todo(title){
     return b;
 }
 
-/* ---------------------------------------------------------------------- */
-/* Data */
-
-sprints = [1,2,3,4,5,6,7];
-users = "antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham";
-
-var mode = "essential";
-
-j12=todo("remove use of dep argument from init_updateannotation", "Dont remove the dep argument yet");
-
-j14=todo(
-    "Refector the root for 1-multiple instances, 2-include print settings, 3-include constraints, 4-include tools, 5-include metadata (owner,time,version)")
-    .moreInfo("clone should work + all of this included in state stack")
-    .addedAt("11:00am 5 Nov 2015")
-    //.headline(""); or id?
-;
-
-j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet");
-console.log(j15);
-
-j15.assignTo("Sohail");
-j15.done("at 4th November");
-//spawn another
-//.not tested
-//.teted
-;
-
-
-var mode = "less important";
-
-j13=todo("show list of objects selected in constraints sidebar.");
-j14=todo("Checkbox for list of constaints.")
-    .moreInfo("high-level description")
-    .addedAt("11:00am 5 Nov 2015")
-    .deadLine("7 November 2015")
-    .moveToSprint(5);
-
-print_all("essential");
 
 /* ---------------------------------------------------------------------- */
 /* View */
@@ -148,3 +110,42 @@ function print_all(){
 
     return ctr;
 }
+
+/* ---------------------------------------------------------------------- */
+/* Data */
+
+sprints = [1,2,3,4,5,6,7];
+users = "antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham";
+
+var mode = "essential";
+
+j12=todo("remove use of dep argument from init_updateannotation", "Dont remove the dep argument yet");
+
+j14=todo(
+    "Refector the root for 1-multiple instances, 2-include print settings, 3-include constraints, 4-include tools, 5-include metadata (owner,time,version)")
+    .moreInfo("clone should work + all of this included in state stack")
+    .addedAt("11:00am 5 Nov 2015")
+    //.headline(""); or id?
+;
+
+j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet");
+console.log(j15);
+
+j15.assignTo("Sohail");
+j15.done("at 4th November");
+//spawn another
+//.not tested
+//.teted
+;
+
+
+var mode = "less important";
+
+j13=todo("show list of objects selected in constraints sidebar.");
+j14=todo("Checkbox for list of constaints.")
+    .moreInfo("high-level description")
+    .addedAt("11:00am 5 Nov 2015")
+    .deadLine("7 November 2015")
+    .moveToSprint(5);
+
+print_all("essential");
