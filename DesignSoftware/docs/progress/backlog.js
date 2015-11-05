@@ -62,7 +62,7 @@ Backlog.prototype.getBrief = function(timestamp){
 }
 
 Backlog.prototype.moreInfoNeeded = function(){
-    //this.incompleteInformation = true;
+    this.incompleteInformation = true;
     return this;
 }
 // .why
@@ -75,6 +75,10 @@ Backlog.prototype.id = function(new_id){
 Backlog.prototype.toBacklog = function(){
     console.log("Task moved to backlog");
     this.sprint = 0;
+    return this;
+}
+Backlog.prototype.isEpic = function(){
+    this.isEpic = true; //Now it can have subtasks
     return this;
 }
 
@@ -147,6 +151,7 @@ j14=todo(
     "Refector the root for 1-multiple instances, 2-include print settings, 3-include constraints, 4-include tools, 5-include metadata (owner,time,version)")
     .moreInfo("clone should work + all of this included in state stack")
     .addedAt("11:00am 5 Nov 2015")
+    .isEpic()
     //.headline(""); or id?
 ;
 
