@@ -14,6 +14,7 @@ assert = function(x, message){
 	if(!x){
 		if(message)
 			console.error(message);
+        alert(x +" "+ message);
 		throw x;
 	}
 };
@@ -40,6 +41,7 @@ Backlog.prototype.done = function(report){
     return this;
 }
 Backlog.prototype.assignTo = function(person, when){
+    assert(users.indexOf(person)>-1, "User not valid");
     this.assignedTo = person;
     this.whenAssigned = when;
     if(!when)
@@ -49,7 +51,7 @@ Backlog.prototype.assignTo = function(person, when){
 
 Backlog.prototype.moveToSprint = function(sprintNumber){
     //this.timemoved to sprint = ... //history?
-    assert(sprints.indexOf(sprintNumber)>-1);
+    assert(sprints.indexOf(sprintNumber)>-1, "sprint number is invalid");
     this.sprint = sprintNumber;
     return this;
 }
@@ -57,6 +59,7 @@ Backlog.prototype.moveToSprint = function(sprintNumber){
 Backlog.prototype.getBrief = function(timestamp){
     return this.title + " " + (this.descr?this.descr:"");
 }
+
 
 var backlogset=[];
 function addToBacklogset(b){
@@ -115,7 +118,8 @@ function print_all(){
 /* Data */
 
 sprints = [1,2,3,4,5,6,7];
-users = "antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham";
+users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy"];
+activeSprint = sprints[sprints.length-1];
 
 var mode = "essential";
 
@@ -128,24 +132,33 @@ j14=todo(
     //.headline(""); or id?
 ;
 
-j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet");
-console.log(j15);
-
-j15.assignTo("Sohail");
-j15.done("at 4th November");
+j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet")
+.assignTo("sohail")
+.done("at 2:57, 4th November");
 //spawn another
 //.not tested
 //.teted
+//.parentTask( lookup("m12"))
 ;
 
+todo("Slicer prints lines instead of Arcs")
+.assignTo("orial");
 
 var mode = "less important";
 
-j13=todo("show list of objects selected in constraints sidebar.");
+j13=todo("show list of objects selected in the constraints sidebar.");
+
 j14=todo("Checkbox for list of constaints.")
     .moreInfo("high-level description")
     .addedAt("11:00am 5 Nov 2015")
     .deadLine("7 November 2015")
     .moveToSprint(5);
 
+todo("BoundingBox");
+
+/* ---------------------------------------------------------------------------------------------------------  */
+
 print_all("essential");
+var e = document.getElementById("sprintNumber");
+console.log(e.innerHTML);
+e.innerHTML = ""+activeSprint;
