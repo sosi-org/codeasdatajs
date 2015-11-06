@@ -123,25 +123,33 @@ function formatUser(u){
 
 
 function print_some( whichones ){
-    var ctr;
+    var ctr=0;
     var totalTime = 0;
     var s1="";
     for(var i=0;i<backlogset.length;i++){
         var b = backlogset[i];
         if(whichones(b)){ //}b.doneReport){
-            ctr+=1;
             if(b.doneReport)
                 ;
+            var ifactive =  ""; // (ctr==0)?" active":"";
+                            //(ctr==0)?" panel-heading ":""; //doesnt work
+            var ifcontext = (ctr%2==0)? " list-group-item-success":"";
             var time_t = b.timeInitialEstimated==null?"":( "<small>"+ (b.timeInitialEstimated)+"h</small>" );
-            s1 += "<li>";
-            s1 += " <b>"+i+".</b> ";
+s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\">"
+            //s1 += "<li>";
+            s1 += " <b>"+(ctr+1)+".</b> ";
             s1 += b.getBrief() ;
             if(b.assignedTo)
                 s1 += formatUser(b.assignedTo); //s1 += " <b>["+b.assignedTo+"]</b>";
-            s1 += time_t;
-            s1+="</li>";
-            s1 += "<hr/>";
+            //s1 += time_t;
+            s1 += "<span class=\"badge\">"+time_t + "</span>";
+            //s1+="</li>";
+s1+="</li>";
+
+            //s1 += "<hr/>";
             totalTime += b.timeInitialEstimated;
+            
+            ctr+=1;
         }
     }
     s1 += "";
@@ -160,7 +168,7 @@ function print_all(){
     var e = document.getElementById("ActiveTasks");
     e.innerHTML = r.html;
     var e = document.getElementById("ActiveTasks-time");
-    e.innerHTML = r.totalTime+" (hours)";
+    e.innerHTML = r.totalTime+"";
 
     var r = print_some(  function (b){return ! b.doneReport;});    
     var e = document.getElementById("BacklogTasks");
@@ -224,6 +232,7 @@ j14=todo(
 j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet")
 .assignTo("sohail")
 .done("at 2:57, 4th November");
+//.addReportDone("Now the user can define any ..."); //Attach a report on a task that is completed.
 //spawn another
 //.not tested
 //.teted
