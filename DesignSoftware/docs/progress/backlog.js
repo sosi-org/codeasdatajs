@@ -114,6 +114,14 @@ function todo(title){
 /* ---------------------------------------------------------------------- */
 /* View */
 
+function formatUser(u){
+    if(u)
+        return " <b>["+u+"]</b>";
+    else
+        return null;
+}
+
+
 function print_some( whichones ){
     var ctr;
     var totalTime = 0;
@@ -129,7 +137,7 @@ function print_some( whichones ){
             s1 += " <b>"+i+".</b> ";
             s1 += b.getBrief() ;
             if(b.assignedTo)
-                s1 += " <b>["+b.assignedTo+"]</b>";
+                s1 += formatUser(b.assignedTo); //s1 += " <b>["+b.assignedTo+"]</b>";
             s1 += time_t;
             s1+="</li>";
             s1 += "<hr/>";
@@ -162,6 +170,7 @@ function print_all(){
 }
 
 
+
 /* -------------Post process-------------------------------------------------------------*/
 
 function postProcess()
@@ -169,8 +178,22 @@ function postProcess()
     print_all("essential");
     var e = document.getElementById("sprintNumber");
     e.innerHTML = ""+activeSprint;
+    
+    var ut="";
+    //ut += "<option>"+"</option>"; //no one
+    for(var i in users)
+        if(users[i])
+            //ut += formatUser(users[i])
+            ut += "<option>"+users[i]+"</option>";
+    var e = document.getElementById("you");
+    e.innerHTML = ut;
 }
 
+/* ---------- */
+function onUserChange(){
+    var s = document.getElementById("you")
+    alert(s.value);
+}
 
 /* ---------------------------------------------------------------------- */
 /* Data */
