@@ -87,7 +87,14 @@ Backlog.prototype.isEpic = function(){
     this.isEpic = true; //Now it can have subtasks
     return this;
 }
+var TIME_HOURS = 1.0;
+var TIME_DAYS = 8.0;
+var TIME_MINUTES = 1.0/60.0;
 
+Backlog.prototype.timeEst = function(time){
+    this.timeInitialEstimated = time;
+    return this;
+}
 
 var backlogset=[];
 function addToBacklogset(b){
@@ -108,6 +115,7 @@ function todo(title){
 
 function print_some( whichones ){
     var ctr;
+    var totalTime = 0;
     var s1="";
     for(var i=0;i<backlogset.length;i++){
         var b = backlogset[i];
@@ -115,29 +123,34 @@ function print_some( whichones ){
             ctr+=1;
             if(b.doneReport)
                 ;
-            s1 = s1.concat( "<li> <b>"+i+".</b> " +b.getBrief() +"</li>");
+            var time_t = b.timeInitialEstimated==null?"":(  
+            "<small>"+ (b.timeInitialEstimated)+"</small>" );
+            s1 = s1.concat( "<li> <b>"+i+".</b> " +b.getBrief() +time_t+"</li>");
             s1 += "<hr/>";
+            totalTime += b.timeInitialEstimated;
         }
     }
     s1 += "";
-    return s1;
+    return {html:s1, count:ctr, totalTime: totalTime};
     //return ctr;
 }
 
 function print_all(){
     var ctr=0;
     //ctr += print_some;
-    var s = print_some(  function (b){return b.doneReport;});    
+    var r = print_some(  function (b){return b.doneReport;});    
     var e = document.getElementById("DoneTasks");
-    e.innerHTML = s;
+    e.innerHTML = r.html;
 
-    var s = print_some(  function (b){return false;});    
+    var r = print_some(  function (b){return false;});    
     var e = document.getElementById("ActiveTasks");
-    e.innerHTML = s;
+    e.innerHTML = r.html;
+    var e = document.getElementById("ActiveTasks-time");
+    e.innerHTML = r.totalTime+" (hours)";
 
-    var s = print_some(  function (b){return ! b.doneReport;});    
+    var r = print_some(  function (b){return ! b.doneReport;});    
     var e = document.getElementById("BacklogTasks");
-    e.innerHTML = s;
+    e.innerHTML = r.html;
 
     return ctr;
 }
