@@ -55,6 +55,7 @@ Backlog.prototype.setSprint = function(sprintNumber){
     assert(sprints.indexOf(sprintNumber)>-1, "sprint number is invalid");
     if(this.sprint)
         console.log("Task moved from sprint "+this.sprint+" to "+sprintNumber);
+    //todo: check if it is not an epic.
     this.sprint = sprintNumber;
     return this;
 }
@@ -142,7 +143,7 @@ function print_all(){
     var e = document.getElementById("DoneTasks");
     e.innerHTML = r.html;
 
-    var r = print_some(  function (b){return false;});    
+    var r = print_some(  function (b){return b.sprint==activeSprint;});    
     var e = document.getElementById("ActiveTasks");
     e.innerHTML = r.html;
     var e = document.getElementById("ActiveTasks-time");
@@ -158,7 +159,7 @@ function print_all(){
 /* ---------------------------------------------------------------------- */
 /* Data */
 
-sprints = [1,2,3,4,5,6,7];
+sprints = [1,2,3,4,5,6,7,8];
 users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy"];
 activeSprint = sprints[sprints.length-1];
 
@@ -171,6 +172,9 @@ j14=todo(
     .moreInfo("clone should work + all of this included in state stack")
     .addedAt("11:00am 5 Nov 2015")
     .isEpic()
+    .timeEst(2*TIME_DAYS)
+    .setSprint(8)
+    .assignTo("antonio")
     //.headline(""); or id?
 ;
 
@@ -212,6 +216,7 @@ todo("KKT for constraints").setSprint(7).toBacklog();
 todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox").id("shape.bb");
 
 todo("Switch to newest ThreeJS").id("threejs.upgrade");
+
 
 
 /* ---------------------------------------------------------------------------------------------------------  */
