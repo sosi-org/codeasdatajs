@@ -124,9 +124,14 @@ function print_some( whichones ){
             ctr+=1;
             if(b.doneReport)
                 ;
-            var time_t = b.timeInitialEstimated==null?"":(  
-            "<small>"+ (b.timeInitialEstimated)+"</small>" );
-            s1 = s1.concat( "<li> <b>"+i+".</b> " +b.getBrief() +time_t+"</li>");
+            var time_t = b.timeInitialEstimated==null?"":( "<small>"+ (b.timeInitialEstimated)+"h</small>" );
+            s1 += "<li>";
+            s1 += " <b>"+i+".</b> ";
+            s1 += b.getBrief() ;
+            if(b.assignedTo)
+                s1 += " <b>["+b.assignedTo+"]</b>";
+            s1 += time_t;
+            s1+="</li>";
             s1 += "<hr/>";
             totalTime += b.timeInitialEstimated;
         }
@@ -155,6 +160,17 @@ function print_all(){
 
     return ctr;
 }
+
+
+/* -------------Post process-------------------------------------------------------------*/
+
+function postProcess()
+{
+    print_all("essential");
+    var e = document.getElementById("sprintNumber");
+    e.innerHTML = ""+activeSprint;
+}
+
 
 /* ---------------------------------------------------------------------- */
 /* Data */
@@ -218,9 +234,3 @@ todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox").id("shape.
 todo("Switch to newest ThreeJS").id("threejs.upgrade");
 
 
-
-/* ---------------------------------------------------------------------------------------------------------  */
-
-print_all("essential");
-var e = document.getElementById("sprintNumber");
-e.innerHTML = ""+activeSprint;
