@@ -175,6 +175,7 @@ function print_all(){
 
 function postProcess()
 {
+    var e;
     print_all("essential");
     var e = document.getElementById("sprintNumber");
     e.innerHTML = ""+activeSprint;
@@ -187,6 +188,9 @@ function postProcess()
             ut += "<option>"+users[i]+"</option>";
     var e = document.getElementById("you");
     e.innerHTML = ut;
+    
+    var change_to_initial_coice=e.onchange;
+    //change_to_initial_coice(); //execute the initial choice
 }
 
 /* ---------- */
