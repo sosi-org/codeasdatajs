@@ -339,7 +339,7 @@ todo("Highlight colour for a reminders (lamp icon)")
 .assignTo("alican");
 
 todo("Calculation of bounding boxes for shapes")
-.moreInfo("Analytical formulas for Bounding boxes.")
+.moreInfo("Analytical formulas for Bounding boxes. For Ellipsoid works fine, there are some bugs in other shapes. Working on it.")
 .assignTo("vitaliy", "4 November 2015 at 11:12")
 .setSprint(8) //make it an active task
 .timeEst(30*TIME_HOURS)
@@ -379,7 +379,7 @@ todo("Tests for rotation matrix.")
 .setSprint(7)
 .actuallyTook(6*TIME_HOURS)
 .done("Successful. Important bug discovered. Took 6 hours.")
-.moreInfo("Description of the bug disovered: ...")
+.moreInfo("Description of the bug disovered: If axis is (0, 0, 0) => division by zero. In this case I think we should return diag(1, 1, 1).")
 ;
 
 todo("Properties bar sometimes shows exception. It should be redesigned. We need to discuss")
