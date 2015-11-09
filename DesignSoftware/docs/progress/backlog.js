@@ -408,3 +408,12 @@ todo("Check why the project name is incorrect after refreshing, but it is known 
 .priority(10)
 .setSprint(8)
 ;
+
+todo("Move root.js into src/shapes folder")
+.assignTo("antonio", "9 November 2015 21:02")
+.setSprint(8)
+;
+
+//todo("Rename the 'webgl' folder into '3d'")  // 3d?  designer? three? web?
+//.setSprint(8)
+//;
