@@ -283,3 +283,8 @@ todo("Make the colour hightlight system consistent").moreInfo("By changing colou
 todo("Highlight colour for a reminders (lamp icon)")
 .assignTo("alican");
 
+todo("Calculation of bounding boxes for shapes").moreInfo("Analytical formulas for Bounding boxes.")
+.assignTo("vitaliy")
+.setSprint(8) //make it an active task
+.timeEst(30*TIME_HOURS)
+;
