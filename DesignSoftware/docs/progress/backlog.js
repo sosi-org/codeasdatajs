@@ -124,6 +124,7 @@ function formatUser(u){
 
 function print_some( whichones ){
     var ctr=0;
+    var totalTime_is_underEstimated=false;
     var totalTime = 0;
     var s1="";
     for(var i=0;i<backlogset.length;i++){
@@ -147,13 +148,18 @@ s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\">"
 s1+="</li>";
 
             //s1 += "<hr/>";
-            totalTime += b.timeInitialEstimated;
+            var dt = b.timeInitialEstimated;
+            if(!dt){
+                dt=0;
+                totalTime_is_underEstimated = true;
+            }
+            totalTime += dt;
             
             ctr+=1;
         }
     }
     s1 += "";
-    return {html:s1, count:ctr, totalTime: totalTime};
+    return {html:s1, count:ctr, totalTime: totalTime, more: totalTime_is_underEstimated};
     //return ctr;
 }
 
@@ -168,9 +174,9 @@ function print_all(){
     var e = document.getElementById("ActiveTasks");
     e.innerHTML = r.html;
     var e = document.getElementById("ActiveTasks-time");
-    e.innerHTML = r.totalTime+"";
+    e.innerHTML = r.totalTime+""+(r.more?"+":"");
 
-    var r = print_some(  function (b){return ! b.doneReport;});    
+    var r = print_some(  function (b){return (! b.doneReport) && !(b.sprint==activeSprint);});    
     var e = document.getElementById("BacklogTasks");
     e.innerHTML = r.html;
 
@@ -231,6 +237,7 @@ j14=todo(
 
 j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet")
 .assignTo("sohail")
+.setSprint(8)
 .done("at 2:57, 4th November");
 //.addReportDone("Now the user can define any ..."); //Attach a report on a task that is completed.
 //spawn another
