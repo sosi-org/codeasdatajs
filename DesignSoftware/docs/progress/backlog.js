@@ -392,5 +392,19 @@ todo("CodeReview: The details of the implementations of the magnet should be rev
 .assignTo("manon", "9 November 2015")
 .priority(800)
 .setSprint(8)
-//.typeCodeReview()  //done->test->review
+//.typeCodeReview(reviewer)  //done->test->review
+;
+
+todo("Check why collision is not working sometimes.")
+.moreInfo("For example: badcollision.1.mp5")
+.assignTo("manon", "9 November 2015")
+.priority(10)
+.setSprint(8)
+;
+
+todo("Check why the project name is incorrect after refreshing, but it is known when you save the unnamed.")
+.moreInfo("Att. Antonio and Alican")
+.assignTo("alican", "9 November 2015")
+.priority(10)
+.setSprint(8)
 ;
