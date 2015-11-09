@@ -109,10 +109,17 @@ var TIME_HOURS = 1.0;
 var TIME_DAYS = 8.0;
 var TIME_MINUTES = 1.0/60.0;
 
-Backlog.prototype.timeEst = function(time){
-    this.timeInitialEstimated = time;
+Backlog.prototype.timeEst = function(time_hours){
+    this.timeInitialEstimated = time_hours;
     return this;
 }
+Backlog.prototype.actuallyTook = function(time_hours){
+    assert(time_hours > 0.0);
+    this.timeActuallyTook = time_hours;
+    return this;
+}
+
+
 
 var backlogset=[];
 function addToBacklogset(b){
@@ -196,7 +203,7 @@ function print_all(){
 
     var r = print_some(  function (b){return (! b.doneReport) && !(b.sprint==activeSprint)
     && b.isVersionRelevant(currentAimedVersion)
-    ;});    
+    ;}); //show: (this.timeActuallyTook)
     var e = document.getElementById("BacklogTasks");
     e.innerHTML = r.html;
 
@@ -348,14 +355,14 @@ todo("Refactror the base field for Shape3D.")
 .moreInfo("rotations are simple fields ax ay az")
 .assignTo("vitaliy", "? November 2015")
 .setSprint(7)
-//.timeTook(13*TIME_HOURS)
+.actuallyTook(13*TIME_HOURS)
 .done("Successful. Took 13 hours.")
 ;
 
 todo("Tests for rotation matrix.")
 .assignTo("vitaliy", "? November 2015")
 .setSprint(7)
-//.timeTook(6*TIME_HOURS)
+.actuallyTook(6*TIME_HOURS)
 .done("Successful. Important bug discovered. Took 6 hours.")
 .moreInfo("Description of the bug disovered: ...")
 ;
