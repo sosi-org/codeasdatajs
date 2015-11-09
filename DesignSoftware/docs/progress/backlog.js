@@ -238,7 +238,8 @@ j14=todo(
 j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet")
 .assignTo("sohail")
 .setSprint(8)
-.done("at 2:57, 4th November");
+.done("at 2:57, 4th November")
+;
 //.addReportDone("Now the user can define any ..."); //Attach a report on a task that is completed.
 //spawn another
 //.not tested
@@ -247,7 +248,9 @@ j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet
 ;
 
 todo("Slicer prints lines instead of Arcs")
-.assignTo("orial");
+.assignTo("orial")
+.setSprint(8)
+;
 
 var mode = "less important";
 
@@ -264,36 +267,51 @@ j14=todo("Checkbox for list of constaints.")
 
 todo("Ojects cannot be moved when looking from below the bed or below the move plane.");
 
-todo("Proper shadow.").moreInfo("According to a threejs demo ...").assignTo("sohail", "5 Nov 2015").moreInfoNeeded()
+todo("Proper shadow.")
+.moreInfo("According to a threejs demo ...")
+.assignTo("sohail", "5 Nov 2015")
+.moreInfoNeeded()
 .attachInfo("check: http://threejs.org/examples/#webgl_interactive_draggablecubes");
 
 todo("Proper shadow. On all objects. Disable in low-performance mode.");
 
-todo("KKT for constraints").setSprint(7).toBacklog();
+todo("KKT for constraints")
+//.setSprint(8)
+.setVersion(2)
+.toBacklog();
 
 
-todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox").id("shape.bb");
+todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox")
+.id("shape.bb");
 
-todo("Switch to newest ThreeJS").id("threejs.upgrade");
+todo("Switch to newest ThreeJS")
+.id("threejs.upgrade");
 
-todo("Make the colour hightlight system consistent").moreInfo("By changing colour all in one place.")
+todo("Make the colour hightlight system consistent")
+.moreInfo("By changing colour all in one place.")
 .assignTo("alican");
 //.done("on Tuesday");
 
 todo("Highlight colour for a reminders (lamp icon)")
 .assignTo("alican");
 
-todo("Calculation of bounding boxes for shapes").moreInfo("Analytical formulas for Bounding boxes.")
-.assignTo("vitaliy")
+todo("Calculation of bounding boxes for shapes")
+.moreInfo("Analytical formulas for Bounding boxes.")
+.assignTo("vitaliy", "4 November 2015 at 11:12")
 .setSprint(8) //make it an active task
 .timeEst(30*TIME_HOURS)
 ;
 
 
 todo("Add node.js deploy scripts on EC2")
-.assignTo("jean")
-.timeEst(8*TIME_HOURS);
+.assignTo("jean", "9 Nov 2015 at 12:00")
+.timeEst(8*TIME_HOURS)
+.setSprint(8)
+;
 
-todo("Install a NodeJS image on Docker")
-.assignTo("jean")
-.timeEst(8*TIME_HOURS);
+todo("Install a NodeJS Docker image")
+.assignTo("jean", "9 Nov 2015 at 12:00")
+.timeEst(8*TIME_HOURS)
+.setSprint(8)
+;
+
