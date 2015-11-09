@@ -336,3 +336,27 @@ todo("Install a NodeJS Docker image")
 .setSprint(8)
 ;
 
+todo("Slicer: Comand line mode")
+.moreInfo("mp5slice.py")
+.assignTo("vitaliy", "? November 2015")
+.setSprint(7)
+//.timeTook(9*TIME_HOURS)
+.done("Successful. Took 9 hours.")
+;
+
+todo("Refactror the base field for Shape3D.")
+.moreInfo("rotations are simple fields ax ay az")
+.assignTo("vitaliy", "? November 2015")
+.setSprint(7)
+//.timeTook(13*TIME_HOURS)
+.done("Successful. Took 13 hours.")
+;
+
+todo("Tests for rotation matrix.")
+.assignTo("vitaliy", "? November 2015")
+.setSprint(7)
+//.timeTook(6*TIME_HOURS)
+.done("Successful. Important bug discovered. Took 6 hours.")
+.moreInfo("Description of the bug disovered: ...")
+;
+
