@@ -417,3 +417,9 @@ todo("Move root.js into src/shapes folder")
 //todo("Rename the 'webgl' folder into '3d'")  // 3d?  designer? three? web?
 //.setSprint(8)
 //;
+
+
+todo("Discuss: Why is function onDocumentMouseWheel(event) commentd?")
+//.isDiscussion()
+.assignTo("alican", "9 November 2015")
+;
