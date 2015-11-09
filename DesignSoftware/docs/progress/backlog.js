@@ -118,7 +118,11 @@ Backlog.prototype.actuallyTook = function(time_hours){
     this.timeActuallyTook = time_hours;
     return this;
 }
-
+//e.g. 1,2,3,10,100. ._priority: An attribute based on which the tasks are sorted (and the starting times are sequenced/scheduled). priority >100 shown as danger (red)
+Backlog.prototype.priority = function(priority_value){
+    this._priority = priority_value;
+    return this;
+}
 
 
 var backlogset=[];
@@ -158,7 +162,18 @@ function print_some( whichones ){
                 ;
             var ifactive =  ""; // (ctr==0)?" active":"";
                             //(ctr==0)?" panel-heading ":""; //doesnt work
-            var ifcontext = "";//(ctr%2==0)? " list-group-item-success":"";
+            var ifcontext = //"";//(ctr%2==0)? " list-group-item-success":"";
+                (b._priority>=100)? "list-group-item-danger":"";
+                
+                
+                /*
+                "list-group-item-success"
+                "list-group-item-info"
+                "list-group-item-warning"
+                "list-group-item-danger"
+                */
+
+                
             var time_t = b.timeInitialEstimated==null?"":( "<small>"+ (b.timeInitialEstimated)+"h</small>" );
 s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\">"
             //s1 += "<li>";
@@ -367,3 +382,15 @@ todo("Tests for rotation matrix.")
 .moreInfo("Description of the bug disovered: ...")
 ;
 
+todo("Properties bar sometimes shows exception. It should be redesigned. We need to discuss")
+.assignTo("alican", "9 November 2015")
+.priority(1000)
+.setSprint(8)
+;
+
+todo("CodeReview: The details of the implementations of the magnet should be revised.")
+.assignTo("manon", "9 November 2015")
+.priority(800)
+.setSprint(8)
+//.typeCodeReview()  //done->test->review
+;
