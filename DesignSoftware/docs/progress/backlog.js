@@ -288,3 +288,12 @@ todo("Calculation of bounding boxes for shapes").moreInfo("Analytical formulas f
 .setSprint(8) //make it an active task
 .timeEst(30*TIME_HOURS)
 ;
+
+
+todo("Add node.js deploy scripts on EC2")
+.assignTo("jean")
+.timeEst(8*TIME_HOURS);
+
+todo("Install a NodeJS image on Docker")
+.assignTo("jean")
+.timeEst(8*TIME_HOURS);
