@@ -170,7 +170,7 @@ function print_all(){
     var e = document.getElementById("DoneTasks");
     e.innerHTML = r.html;
 
-    var r = print_some(  function (b){return b.sprint==activeSprint;});    
+    var r = print_some(  function (b){return (! b.doneReport) && (b.sprint==activeSprint) ;});    
     var e = document.getElementById("ActiveTasks");
     e.innerHTML = r.html;
     var e = document.getElementById("ActiveTasks-time");
