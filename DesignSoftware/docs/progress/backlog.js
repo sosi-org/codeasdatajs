@@ -134,7 +134,7 @@ function print_some( whichones ){
                 ;
             var ifactive =  ""; // (ctr==0)?" active":"";
                             //(ctr==0)?" panel-heading ":""; //doesnt work
-            var ifcontext = (ctr%2==0)? " list-group-item-success":"";
+            var ifcontext = "";//(ctr%2==0)? " list-group-item-success":"";
             var time_t = b.timeInitialEstimated==null?"":( "<small>"+ (b.timeInitialEstimated)+"h</small>" );
 s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\">"
             //s1 += "<li>";
