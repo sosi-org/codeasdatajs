@@ -276,4 +276,10 @@ todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox").id("shape.
 
 todo("Switch to newest ThreeJS").id("threejs.upgrade");
 
+todo("Make the colour hightlight system consistent").moreInfo("By changing colour all in one place.")
+.assignTo("alican");
+//.done("on Tuesday");
+
+todo("Highlight colour for a reminders (lamp icon)")
+.assignTo("alican");
 
