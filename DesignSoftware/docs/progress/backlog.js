@@ -118,7 +118,11 @@ Backlog.prototype.actuallyTook = function(time_hours){
     this.timeActuallyTook = time_hours;
     return this;
 }
-
+//e.g. 1,2,3,10,100. ._priority: An attribute based on which the tasks are sorted (and the starting times are sequenced/scheduled). priority >100 shown as danger (red)
+Backlog.prototype.priority = function(priority_value){
+    this._priority = priority_value;
+    return this;
+}
 
 
 var backlogset=[];
@@ -158,7 +162,18 @@ function print_some( whichones ){
                 ;
             var ifactive =  ""; // (ctr==0)?" active":"";
                             //(ctr==0)?" panel-heading ":""; //doesnt work
-            var ifcontext = "";//(ctr%2==0)? " list-group-item-success":"";
+            var ifcontext = //"";//(ctr%2==0)? " list-group-item-success":"";
+                (b._priority>=100)? "list-group-item-danger":"";
+                
+                
+                /*
+                "list-group-item-success"
+                "list-group-item-info"
+                "list-group-item-warning"
+                "list-group-item-danger"
+                */
+
+                
             var time_t = b.timeInitialEstimated==null?"":( "<small>"+ (b.timeInitialEstimated)+"h</small>" );
 s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\">"
             //s1 += "<li>";
@@ -324,7 +339,7 @@ todo("Highlight colour for a reminders (lamp icon)")
 .assignTo("alican");
 
 todo("Calculation of bounding boxes for shapes")
-.moreInfo("Analytical formulas for Bounding boxes.")
+.moreInfo("Analytical formulas for Bounding boxes. For Ellipsoid works fine, there are some bugs in other shapes. Working on it.")
 .assignTo("vitaliy", "4 November 2015 at 11:12")
 .setSprint(8) //make it an active task
 .timeEst(30*TIME_HOURS)
@@ -364,6 +379,47 @@ todo("Tests for rotation matrix.")
 .setSprint(7)
 .actuallyTook(6*TIME_HOURS)
 .done("Successful. Important bug discovered. Took 6 hours.")
-.moreInfo("Description of the bug disovered: ...")
+.moreInfo("Description of the bug disovered: If axis is (0, 0, 0) => division by zero. In this case I think we should return diag(1, 1, 1).")
 ;
 
+todo("Properties bar sometimes shows exception. It should be redesigned. We need to discuss")
+.assignTo("alican", "9 November 2015")
+.priority(1000)
+.setSprint(8)
+;
+
+todo("CodeReview: The details of the implementations of the magnet should be revised.")
+.assignTo("manon", "9 November 2015")
+.priority(800)
+.setSprint(8)
+//.typeCodeReview(reviewer)  //done->test->review
+;
+
+todo("Check why collision is not working sometimes.")
+.moreInfo("For example: badcollision.1.mp5")
+.assignTo("manon", "9 November 2015")
+.priority(10)
+.setSprint(8)
+;
+
+todo("Check why the project name is incorrect after refreshing, but it is known when you save the unnamed.")
+.moreInfo("Att. Antonio and Alican")
+.assignTo("alican", "9 November 2015")
+.priority(10)
+.setSprint(8)
+;
+
+todo("Move root.js into src/shapes folder")
+.assignTo("antonio", "9 November 2015 21:02")
+.setSprint(8)
+;
+
+//todo("Rename the 'webgl' folder into '3d'")  // 3d?  designer? three? web?
+//.setSprint(8)
+//;
+
+
+todo("Discuss: Why is function onDocumentMouseWheel(event) commentd?")
+//.isDiscussion()
+.assignTo("alican", "9 November 2015")
+;
