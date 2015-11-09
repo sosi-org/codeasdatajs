@@ -52,13 +52,30 @@ Backlog.prototype.assignTo = function(person, when){
 
 Backlog.prototype.setSprint = function(sprintNumber){
     //this.timemoved to sprint = ... //history?
-    assert(sprints.indexOf(sprintNumber)>-1, "sprint number is invalid");
+    assert(sprints.indexOf(sprintNumber)>-1, "sprint number is invalid "+sprintNumber);
     if(this.sprint)
         console.log("Task moved from sprint "+this.sprint+" to "+sprintNumber);
     //todo: check if it is not an epic.
     this.sprint = sprintNumber;
     return this;
 }
+Backlog.prototype.setVersion = function(versionNumber){
+    //Version first assigned, then postponed, etc.
+    validVersions=[1,2];
+    assert(validVersions.indexOf(versionNumber)>-1, "version number is invalid" + versionNumber);
+    if(this.version)
+        console.log("Task moved from version "+this.version+" to "+versionNumber);
+    this.version = versionNumber;
+    return this;
+}
+Backlog.prototype.isVersionRelevant = function(currentAimedVersion){
+return !this.currentAimedVersion || this.currentAimedVersion==currentAimedVersion;
+}
+
+//Backlog.prototype.postPone(){
+//    adds a separate task and freezes the previous one.
+//    When getDescr is done, postponed tasks may refer to their original postponed tasks.
+//}
 
 Backlog.prototype.getBrief = function(timestamp){
     return this.title + " " + (this.descr?this.descr:"");
@@ -166,17 +183,20 @@ s1+="</li>";
 function print_all(){
     var ctr=0;
     //ctr += print_some;
-    var r = print_some(  function (b){return b.doneReport;});    
+    var r = print_some(  function (b){return b.doneReport;});  //inclued irrelaant versions if not done. But don't include past versions and past sprints.  
     var e = document.getElementById("DoneTasks");
     e.innerHTML = r.html;
 
-    var r = print_some(  function (b){return (! b.doneReport) && (b.sprint==activeSprint) ;});    
+    var r = print_some(  function (b){return (! b.doneReport) && (b.sprint==activeSprint) 
+    && b.isVersionRelevant(currentAimedVersion);});    
     var e = document.getElementById("ActiveTasks");
     e.innerHTML = r.html;
     var e = document.getElementById("ActiveTasks-time");
     e.innerHTML = r.totalTime+""+(r.more?"+":"");
 
-    var r = print_some(  function (b){return (! b.doneReport) && !(b.sprint==activeSprint);});    
+    var r = print_some(  function (b){return (! b.doneReport) && !(b.sprint==activeSprint)
+    && b.isVersionRelevant(currentAimedVersion)
+    ;});    
     var e = document.getElementById("BacklogTasks");
     e.innerHTML = r.html;
 
@@ -219,6 +239,7 @@ function onUserChange(){
 sprints = [1,2,3,4,5,6,7,8];
 users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy"];
 activeSprint = sprints[sprints.length-1];
+currentAimedVersion = 1; //currentAimedVersion
 
 var mode = "essential";
 
