@@ -2,9 +2,9 @@
 /* ---------------------------------------------------------------------- */
 /* Data */
 
-sprints = [1,2,3,4,5,6,7,8];
+sprints = [1,2,3,4,5,6,7,8,9];
 users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy", "alicia"];
-activeSprint = sprints[sprints.length-1];
+activeSprint = 8; // sprints[sprints.length-1];
 currentAimedVersion = 1; //currentAimedVersion
 
 var mode = "essential";
@@ -242,7 +242,7 @@ todo("animation: buttons  (replay, play, rewind, save)")
 ;
 
 todo("stream: toggle stream camera (as if twitch). tick: exact stream")
-.version(2)
+.setVersion(2)
 ;
 
 todo("selectionmesh: separate create and update")
