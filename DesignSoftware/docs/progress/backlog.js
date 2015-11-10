@@ -259,7 +259,7 @@ function onUserChange(){
 /* Data */
 
 sprints = [1,2,3,4,5,6,7,8];
-users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy"];
+users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy", "alicia"];
 activeSprint = sprints[sprints.length-1];
 currentAimedVersion = 1; //currentAimedVersion
 
@@ -422,4 +422,9 @@ todo("Move root.js into src/shapes folder")
 todo("Discuss: Why is function onDocumentMouseWheel(event) commentd?")
 //.isDiscussion()
 .assignTo("alican", "9 November 2015")
+;
+
+todo("Run the designer (setup git, python3, server.py)")
+.assignTo("alicia", "10 November 2015")
+.setSprint(8)
 ;
