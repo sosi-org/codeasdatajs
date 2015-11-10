@@ -172,3 +172,80 @@ todo("Run the designer (setup git, python3, server.py)")
 .assignTo("alicia", "10 November 2015")
 .setSprint(8)
 ;
+
+
+todo("makeMesh: Find a pattern for making each Shape3D in generation.js")
+.assignTo("sohail", "10 November 2015")
+.setSprint(8)
+;
+
+todo("recommendSize: cCamera.recommendSize(point3d): recommends a size for an object at a perticular distance")
+.assignTo("sohail", "10 November 2015")
+.setSprint(8)
+;
+
+recSz =
+todo("cCamera.recommendSize(point3d): recommends a size for an object at a perticular distance")
+.moreInfo("See a failed attempt at: suggestAbsoluteSizeBasedOnApparentSize()")
+.id("autoSize")
+.assignTo("sohail", "10 November 2015")
+.setSprint(8)
+;
+
+todo("resize Arrows dynamically based on camera location. (See )")
+.basedOn(recSz) //getTask("autoSize")
+.assignTo("sohail", "10 November 2015")
+.setSprint(8)
+;
+
+todo("Timing of rendering (Render request)") .id("timing:render")
+.setSprint(8)
+;
+
+todo("Timing of updateScene (update meshes)")   .id("timing:updateMesh")
+.after(getTask("timing:render"))
+.setSprint(8) //exclusive
+;
+
+todo("Timing of preparePhys")   .id("timing:physprepare")
+.after(getTask("timing:updateMesh"))
+.setSprint(8)
+.assignTo("sohail") //exclusive
+;
+
+todo("Camera: RMB moves according to exact mouse movements")
+.assignTo("sohail") //exclusive
+;
+
+//dont define label / tag
+
+todo("clipboard: copy mp5")
+.assignTo("sohail")
+;
+
+todo("camera: re-test upright")
+.assignTo("sohail")
+;
+
+todo("camera: go to target despite interruption during animation")
+.assignTo("sohail")
+;
+
+todo("camera: shift temporarily to side view")
+.assignTo("sohail")
+.setSprint(9)
+;
+
+todo("animation: buttons  (replay, play, rewind, save)")
+.assignTo("sohail")
+.setSprint(8)
+;
+
+todo("stream: toggle stream camera (as if twitch). tick: exact stream")
+.version(2)
+;
+
+todo("selectionmesh: separate create and update")
+.setSprint(8)
+.assignTo("sohail") //exclusive
+;
