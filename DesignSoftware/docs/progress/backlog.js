@@ -203,7 +203,7 @@ function print_some( whichones ){
 
                 
             var time_t = b.timeInitialEstimated==null?"":( "<small>"+ (b.timeInitialEstimated)+"h</small>" );
-s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\">"
+s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\"    style=\"padding-top: 0px; padding-bottom: 0px;\" >"
             //s1 += "<li>";
             s1 += " <b>"+(ctr+1)+".</b> ";
             s1 += b.getBrief() ;
