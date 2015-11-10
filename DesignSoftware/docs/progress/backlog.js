@@ -118,7 +118,11 @@ Backlog.prototype.actuallyTook = function(time_hours){
     this.timeActuallyTook = time_hours;
     return this;
 }
-
+//e.g. 1,2,3,10,100. ._priority: An attribute based on which the tasks are sorted (and the starting times are sequenced/scheduled). priority >100 shown as danger (red)
+Backlog.prototype.priority = function(priority_value){
+    this._priority = priority_value;
+    return this;
+}
 
 
 var backlogset=[];
@@ -158,7 +162,18 @@ function print_some( whichones ){
                 ;
             var ifactive =  ""; // (ctr==0)?" active":"";
                             //(ctr==0)?" panel-heading ":""; //doesnt work
-            var ifcontext = "";//(ctr%2==0)? " list-group-item-success":"";
+            var ifcontext = //"";//(ctr%2==0)? " list-group-item-success":"";
+                (b._priority>=100)? "list-group-item-danger":"";
+                
+                
+                /*
+                "list-group-item-success"
+                "list-group-item-info"
+                "list-group-item-warning"
+                "list-group-item-danger"
+                */
+
+                
             var time_t = b.timeInitialEstimated==null?"":( "<small>"+ (b.timeInitialEstimated)+"h</small>" );
 s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\">"
             //s1 += "<li>";
@@ -239,131 +254,4 @@ function onUserChange(){
     var s = document.getElementById("you")
     alert(s.value);
 }
-
-/* ---------------------------------------------------------------------- */
-/* Data */
-
-sprints = [1,2,3,4,5,6,7,8];
-users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy"];
-activeSprint = sprints[sprints.length-1];
-currentAimedVersion = 1; //currentAimedVersion
-
-var mode = "essential";
-
-j12=todo("remove use of @dep argument from @init_updateannotation", "Dont remove the dep argument yet");
-
-j14=todo(
-    "Refector the root for 1-multiple instances, 2-include print settings, 3-include constraints, 4-include tools, 5-include metadata (owner,time,version)")
-    .moreInfo("clone should work + all of this included in state stack")
-    .addedAt("11:00am 5 Nov 2015")
-    .isEpic()
-    .timeEst(2*TIME_DAYS)
-    .setSprint(8)
-    .assignTo("antonio")
-    //.headline(""); or id?
-;
-
-j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet")
-.assignTo("sohail")
-.setSprint(8)
-.done("at 2:57, 4th November")
-;
-//.addReportDone("Now the user can define any ..."); //Attach a report on a task that is completed.
-//spawn another
-//.not tested
-//.teted
-//.parentTask( lookup("m12"))
-;
-
-todo("Slicer prints lines instead of Arcs")
-.assignTo("orial")
-.setSprint(8)
-;
-
-var mode = "less important";
-
-j13=todo("show list of objects selected in the constraints sidebar.");
-
-j14=todo("Checkbox for list of constaints.")
-    .moreInfo("high-level description")
-    .addedAt("11:00am 5 Nov 2015")
-    .deadLine("7 November 2015")
-    .setSprint(5);
-
-//todo("BoundingBox");
-
-
-todo("Ojects cannot be moved when looking from below the bed or below the move plane.");
-
-todo("Proper shadow.")
-.moreInfo("According to a threejs demo ...")
-.assignTo("sohail", "5 Nov 2015")
-.moreInfoNeeded()
-.attachInfo("check: http://threejs.org/examples/#webgl_interactive_draggablecubes");
-
-todo("Proper shadow. On all objects. Disable in low-performance mode.");
-
-todo("KKT for constraints")
-//.setSprint(8)
-.setVersion(2)
-.toBacklog();
-
-
-todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox")
-.id("shape.bb");
-
-todo("Switch to newest ThreeJS")
-.id("threejs.upgrade");
-
-todo("Make the colour hightlight system consistent")
-.moreInfo("By changing colour all in one place.")
-.assignTo("alican");
-//.done("on Tuesday");
-
-todo("Highlight colour for a reminders (lamp icon)")
-.assignTo("alican");
-
-todo("Calculation of bounding boxes for shapes")
-.moreInfo("Analytical formulas for Bounding boxes.")
-.assignTo("vitaliy", "4 November 2015 at 11:12")
-.setSprint(8) //make it an active task
-.timeEst(30*TIME_HOURS)
-;
-
-
-todo("Add node.js deploy scripts on EC2")
-.assignTo("jean", "9 Nov 2015 at 12:00")
-.timeEst(8*TIME_HOURS)
-.setSprint(8)
-;
-
-todo("Install a NodeJS Docker image")
-.assignTo("jean", "9 Nov 2015 at 12:00")
-.timeEst(8*TIME_HOURS)
-.setSprint(8)
-;
-
-todo("Slicer: Comand line mode")
-.moreInfo("mp5slice.py")
-.assignTo("vitaliy", "? November 2015")
-.setSprint(7)
-//.timeTook(9*TIME_HOURS)
-.done("Successful. Took 9 hours.")
-;
-
-todo("Refactror the base field for Shape3D.")
-.moreInfo("rotations are simple fields ax ay az")
-.assignTo("vitaliy", "? November 2015")
-.setSprint(7)
-.actuallyTook(13*TIME_HOURS)
-.done("Successful. Took 13 hours.")
-;
-
-todo("Tests for rotation matrix.")
-.assignTo("vitaliy", "? November 2015")
-.setSprint(7)
-.actuallyTook(6*TIME_HOURS)
-.done("Successful. Important bug discovered. Took 6 hours.")
-.moreInfo("Description of the bug disovered: ...")
-;
 
