@@ -83,7 +83,7 @@ todo("Highlight colour for a reminders (lamp icon)")
 .assignTo("alican");
 
 todo("Calculation of bounding boxes for shapes")
-.moreInfo("Analytical formulas for Bounding boxes. For Ellipsoid works fine, there are some bugs in other shapes. Working on it.")
+.moreInfo("Analytical formulas for Bounding boxes. For all shapes works. Tested.")
 .assignTo("vitaliy", "4 November 2015 at 11:12")
 .setSprint(8) //make it an active task
 .timeEst(30*TIME_HOURS)
