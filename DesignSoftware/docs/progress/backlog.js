@@ -241,6 +241,8 @@ s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\"    style=\"padding-top
                 s1 += formatUser(b.assignedTo); //s1 += " <b>["+b.assignedTo+"]</b>";
             //s1 += time_t;
             s1 += "<span class=\"badge\">"+time_t + "</span>";
+            if(b._inprogress)
+                s1 += "&nbsp;<small><span class=\"label label-default\">in progress</span></small>";
             //s1+="</li>";
 s1+="</li>";
 
@@ -256,6 +258,7 @@ s1+="</li>";
         }
     }
     s1 += "";
+    //todo: add times to each category. Category = a callback + a key. The sum of categories whould be equal to the total.
     return {html:s1, count:ctr, totalTime: totalTime, more: totalTime_is_underEstimated};
     //return ctr;
 }
