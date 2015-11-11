@@ -200,9 +200,38 @@ function todo(title){
 /* ---------------------------------------------------------------------- */
 /* View */
 
+function mouseOverUser(uname){
+    //alert(uname);
+    var userclassname = "user-"+uname;
+    console.log(userclassname);
+    /*
+    the following changes the class
+    var elements = document.getElementsByClassName(userclassname);
+    for (var i in elements) {
+      if (elements.hasOwnProperty(i)) {
+        elements[i].className = 'show-class';
+      }
+    }
+    */
+    //$('.'+userclassname).css('font-weight', '1300');
+    //$('.'+userclassname).css('color', 'red');
+    $('.'+userclassname).css('background', '#eeaa99');
+}
+
+function mouseOverUserFinished(uname){
+    var userclassname = "user-"+uname;
+    console.log(userclassname+"-------------");
+    //$('.'+userclassname).css('font-weight', '300');    
+    //$('.'+userclassname).css('color', '');
+    $('.'+userclassname).css('background', 'none');
+    //background-color: green;
+}
 function formatUser(u){
-    if(u)
-        return " <b>["+u+"]</b>";
+    if(u){
+        //q.onmouseover=function(){alert("hi");}
+        var userClassName = "user-"+u;
+        return " <span id=uuu  class=\""+userClassName+"\"     onmouseover=\"mouseOverUser('"+u+"');\"   onmouseout=\"mouseOverUserFinished('"+u+"');\" ><b>["+u+"]</b></span>";
+    }
     else
         return null;
 }
