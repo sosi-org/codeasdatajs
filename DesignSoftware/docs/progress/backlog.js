@@ -68,6 +68,12 @@ Backlog.prototype.setSprint = function(sprintNumber){
     this.sprint = sprintNumber;
     return this;
 }
+Backlog.prototype.subSprint = function(subSprintNumber){
+    assert(Math.floor(subSprintNumber) == this.sprint, "Number of the sprint and subsprint dont match");
+    this._subSprint = subSprintNumber;
+    return this;
+}
+
 Backlog.prototype.setVersion = function(versionNumber){
     //Version first assigned, then postponed, etc.
     validVersions=[1,2];
@@ -132,6 +138,10 @@ Backlog.prototype.priority = function(priority_value){
     this._priority = priority_value;
     return this;
 }
+
+
+//<--- isEpic
+
 Backlog.prototype.basedOn = function(task2){
     assert(task2.getBrief);
     this.prequisits.push(task2);
@@ -142,6 +152,22 @@ Backlog.prototype.after = function(task2){
     //also: ...
     return this;
 }
+Backlog.prototype.within = function(task2){
+    this.for_task = task2; //is constituent of another one
+    return this;
+}
+
+Backlog.prototype.inProgress = function(whenStarted){
+    if(!whenStarted) console.warn("Progress start time not specified");
+    this._inprogress = true;
+    this._whenstarted = whenStarted;
+    assert(this._inprogress);
+    //also: ...
+    return this;
+}
+
+
+// ************************************
 
 var backlogset=[];
 
@@ -151,9 +177,12 @@ function addToBacklogset(b){
 }
 //backlogset.
 getTask = function(taskName){
-    for(var i=0;i<backlogset.length;i++)
+    for(var i=0;i<backlogset.length;i++){
         if(backlogset[i]._id == taskName)
             return backlogset[i];
+        //if(backlogset[i].title == taskName)
+        //    return backlogset[i];
+    }
     assert(false, "Task with .id(\""+ taskName +"\") not found");
 }
 
@@ -231,25 +260,38 @@ s1+="</li>";
 }
 
 function print_all(){
+    var total_count = 0;
     var ctr=0;
     //ctr += print_some;
-    var r = print_some(  function (b){return b.doneReport;});  //inclued irrelaant versions if not done. But don't include past versions and past sprints.  
+    var r = print_some(  function isaccomplished(b){return b.doneReport;});  //inclued irrelaant versions if not done. But don't include past versions and past sprints.  
     var e = document.getElementById("DoneTasks");
     e.innerHTML = r.html;
+    total_count += r.count;
 
-    var r = print_some(  function (b){return (! b.doneReport) && (b.sprint==activeSprint) 
-    && b.isVersionRelevant(currentAimedVersion);});    
+    var r = print_some(  function isactive(b){
+        var c=
+        b._inprogress ||
+        ((! b.doneReport) && (b.sprint==activeSprint) && b.isVersionRelevant(currentAimedVersion) );
+        return c;
+        });
     var e = document.getElementById("ActiveTasks");
     e.innerHTML = r.html;
+    total_count += r.count;
+
     var e = document.getElementById("ActiveTasks-time");
     e.innerHTML = r.totalTime+""+(r.more?"+":"");
 
-    var r = print_some(  function (b){return (! b.doneReport) && !(b.sprint==activeSprint)
-    && b.isVersionRelevant(currentAimedVersion)
-    ;}); //show: (this.timeActuallyTook)
+    var r = print_some(  function isinbacklog(b){
+        var c=
+        (!b._inprogress) &&
+        (! b.doneReport) && !(b.sprint==activeSprint) && b.isVersionRelevant(currentAimedVersion);
+        return c;
+    }); //show: (this.timeActuallyTook)
     var e = document.getElementById("BacklogTasks");
     e.innerHTML = r.html;
+    total_count += r.count;
 
+    console.log("total shown = "+total_count+" out of "+backlogset.length+ ((total_count != backlogset.length)?"Something went wrong.":""));
     return ctr;
 }
 
