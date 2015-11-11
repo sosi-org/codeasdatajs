@@ -267,6 +267,10 @@ todo("Each Shape should have .asDict()")
 .setVersion(1)
 .priority(100)
 .assignTo("patrick")
+.id("getdict")
+.inProgress()
+.setSprint(8) //.setSprint(8.2)
+.subSprint(8.2)
 ;
 
 todo("Unit Tests for everything")
@@ -296,3 +300,26 @@ todo("Replay: the replay stop means Fast forward to end state.")
 ;
 
 todo("Grid: snap to sizes 2x and x/2 while resizing.");
+
+
+todo("getdict: shape.getDict() for 4 primitives")
+//automatically add as a subtask? : .within()
+;
+
+todo("getdict: shapeFactory()")
+.assignTo("patrick")
+.inProgress()
+.setSprint(8)
+.subSprint(8.2)
+.within(getTask("getdict"))  //get task can check the full title too
+//.after(getTask("getdict:...")
+;
+
+
+
+todo("getdict: unittest: decode.encode.equalsto")
+.assignTo("patrick")
+.setSprint(8)
+.subSprint(8.2)
+.within(getTask("getdict"))
+;
