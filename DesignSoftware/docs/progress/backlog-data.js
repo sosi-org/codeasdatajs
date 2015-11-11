@@ -71,7 +71,7 @@ todo("KKT for constraints")
 todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox")
 .id("shape.bb");
 
-todo("Switch to newest ThreeJS")
+todo("Upgrate (switch) to newest ThreeJS: r73")
 .id("threejs.upgrade");
 
 todo("Make the colour hightlight system consistent")
@@ -336,3 +336,31 @@ todo("getdict: change 'colour' to 'displaycolor'")
 
 todo("We don't want the socket.io to affect the performance at all. Everything should be done in a setTimeout()")
 ;
+
+
+todo("Use the right pattern for notifying AngularJS (Observer pattern?).")
+.assignTo("alican")
+.setSprint(8)
+.isEpic()
+.inProgress()
+.id("Angular-trigger")
+;
+
+todo("The simple callback pattern for notifying AngularJS. Needs code review")
+.moreInfo()
+.assignTo("alican")
+.setSprint(8)
+.inProgress()
+.within(getTask("Angular-trigger"))
+//.done("report", "when")
+//.timeTook()
+;
+
+todo("Study AngularJS 2.0")
+//.isReading() //educaitonal
+;
+
+todo("Study OT")
+//.isReading() //educaitonal
+;
+
