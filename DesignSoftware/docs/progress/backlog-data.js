@@ -266,7 +266,7 @@ todo("j2js should be replaced with asDict")
 todo("Each Shape should have .asDict()")
 .setVersion(1)
 .priority(100)
-//.assignTo("sohail") Jean? Vitaliy?
+.assignTo("patrick")
 ;
 
 todo("Unit Tests for everything")
