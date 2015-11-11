@@ -52,7 +52,9 @@
     <h3 class="panel-title">Active tasks</h3>
     <small><small>(Active Sprint = <b><span id="sprintNumber">-</span></b> <span id="sprintInfo"></span>)</small></small>
     </div>
-    <div class="panel-body">  
+    <div class="panel-body"
+        style = "padding-top: 0px; padding-bottom: 0px;    padding-right: 0px; padding-left: 0px;"
+    >
     
     <ul class="list-group" id = "ActiveTasks">
     </ul>
@@ -66,7 +68,9 @@
     
     <div class="panel panel-info">
     <div class="panel-heading">Back log (inactive tasks)</div>
-    <div class="panel-body">  
+    <div class="panel-body"
+        style = "padding-top: 0px; padding-bottom: 0px;    padding-right: 0px; padding-left: 0px;"
+    >
     
     <!--<h2>Back log (inactive tasks)</h2>-->
     <ul class="list-group"  id = "BacklogTasks">
@@ -76,16 +80,21 @@
     </div>
     
     
-    <div class="panel panel-success">
+    <div class="panel panel-success"
+    >
     <div class="panel-heading">Finished tasks (Current sprint)</div>
-    <div class="panel-body">  
+    <div class="panel-body"
+        style = "padding-top: 0px; padding-bottom: 0px;    padding-right: 0px; padding-left: 0px;"
+    >
     <!-- <h2>Finished tasks (Current sprint)</h2> -->
     <ul id = "DoneTasks" class="list-group" >
     </ul>
-    </div></div>
+    </div>
+    </div>
     Select user: <select id="you" onchange="onUserChange()">
     </select>
     </body>
 <script type='text/javascript' src='backlog.js'></script>
+<script type='text/javascript' src='backlog-data.js'></script>
 <script type="text/javascript">postProcess()</script>
 </html>

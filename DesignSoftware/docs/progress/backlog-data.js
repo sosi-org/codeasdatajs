@@ -2,9 +2,9 @@
 /* ---------------------------------------------------------------------- */
 /* Data */
 
-sprints = [1,2,3,4,5,6,7,8];
-users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy", "alicia"];
-activeSprint = sprints[sprints.length-1];
+sprints = [1,2,3,4,5,6,7,8,9];
+users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy", "alicia", "konstantin"];
+activeSprint = 8; // sprints[sprints.length-1];
 currentAimedVersion = 1; //currentAimedVersion
 
 var mode = "essential";
@@ -83,7 +83,7 @@ todo("Highlight colour for a reminders (lamp icon)")
 .assignTo("alican");
 
 todo("Calculation of bounding boxes for shapes")
-.moreInfo("Analytical formulas for Bounding boxes. For Ellipsoid works fine, there are some bugs in other shapes. Working on it.")
+.moreInfo("Analytical formulas for Bounding boxes. For all shapes works. Tested.")
 .assignTo("vitaliy", "4 November 2015 at 11:12")
 .setSprint(8) //make it an active task
 .timeEst(30*TIME_HOURS)
@@ -172,3 +172,127 @@ todo("Run the designer (setup git, python3, server.py)")
 .assignTo("alicia", "10 November 2015")
 .setSprint(8)
 ;
+
+
+todo("makeMesh: Find a pattern for making each Shape3D in generation.js")
+.assignTo("sohail", "10 November 2015")
+.setSprint(8)
+;
+
+todo("recommendSize: cCamera.recommendSize(point3d): recommends a size for an object at a perticular distance")
+.assignTo("sohail", "10 November 2015")
+.setSprint(8)
+;
+
+recSz =
+todo("cCamera.recommendSize(point3d): recommends a size for an object at a perticular distance")
+.moreInfo("See a failed attempt at: suggestAbsoluteSizeBasedOnApparentSize()")
+.id("autoSize")
+.assignTo("sohail", "10 November 2015")
+.setSprint(8)
+;
+
+todo("resize Arrows dynamically based on camera location. (See )")
+.basedOn(recSz) //getTask("autoSize")
+.assignTo("sohail", "10 November 2015")
+.setSprint(8)
+;
+
+todo("Timing of rendering (Render request)") .id("timing:render")
+.setSprint(8)
+;
+
+todo("Timing of updateScene (update meshes)")   .id("timing:updateMesh")
+.after(getTask("timing:render"))
+.setSprint(8) //exclusive
+;
+
+todo("Timing of preparePhys")   .id("timing:physprepare")
+.after(getTask("timing:updateMesh"))
+.setSprint(8)
+.assignTo("sohail") //exclusive
+;
+
+todo("Camera: RMB moves according to exact mouse movements")
+.assignTo("sohail") //exclusive
+;
+
+//dont define label / tag
+
+todo("clipboard: copy mp5")
+.assignTo("sohail")
+;
+
+todo("camera: re-test upright")
+.assignTo("sohail")
+;
+
+todo("camera: go to target despite interruption during animation")
+.assignTo("sohail")
+;
+
+todo("camera: shift temporarily to side view")
+.assignTo("sohail")
+.setSprint(9)
+;
+
+todo("animation: buttons  (replay, play, rewind, save)")
+.assignTo("sohail")
+.setSprint(8)
+;
+
+todo("stream: toggle stream camera (as if twitch). tick: exact stream")
+.setVersion(2)
+;
+
+todo("selectionmesh: separate create from update")
+.setSprint(8)
+.assignTo("sohail") //exclusive
+;
+
+todo("python server must use REST API")
+.isEpic()
+.priority(100)
+.setSprint(8)
+//.assignTo("sohail") Jean? Vitaliy? (Constantin? Ali?)
+.assignTo("konstantin")
+;
+
+
+todo("j2js should be replaced with asDict")
+.setVersion(1)
+;
+
+todo("Each Shape should have .asDict()")
+.setVersion(1)
+.priority(100)
+.assignTo("patrick")
+;
+
+todo("Unit Tests for everything")
+.isEpic()
+;
+
+
+todo("CSG: Fix bugs about subtraction")
+.priority(500)
+.setSprint(8)
+.assignTo("sohail")
+;
+
+
+todo("Remove object sometimes leaves the boundig box. In such cases, the Replay breaks.")
+.priority(500)
+.setSprint(8)
+.assignTo("sohail")
+;
+
+todo("Replay: the replay cannot be stopped. If something breaks during the replay the exception should be caught.")
+.assignTo("jean")
+;
+
+todo("Replay: the replay stop means Fast forward to end state.")
+.assignTo("jean")
+;
+
+todo("Grid: snap to sizes 2x and x/2 while resizing.");

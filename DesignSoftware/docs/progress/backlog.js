@@ -23,6 +23,8 @@ assert = function(x, message){
 function Backlog(title){
     this.title = title;
     this.attachments = [];
+    this.whocan=[];
+    this.prequisits = []; // .basedOn(t)
 };
 Backlog.prototype.moreInfo = function(description){
     this.descr = description;
@@ -49,6 +51,13 @@ Backlog.prototype.assignTo = function(person, when){
         console.log("Warning: Task assigned without assigned time. Task= " + this.title);
     return this;
 }
+Backlog.prototype.assignExclusively = function(person, when){
+    this.assignTo(person,when);
+    this.whocan.push(person);
+    this.exclusively = person; //redundancy
+    return this;
+}
+
 
 Backlog.prototype.setSprint = function(sprintNumber){
     //this.timemoved to sprint = ... //history?
@@ -93,7 +102,7 @@ Backlog.prototype.attachInfo = function(text){
 }
 
 Backlog.prototype.id = function(new_id){
-    this.id = new_id;
+    this._id = new_id;
     return this;
 }
 Backlog.prototype.toBacklog = function(){
@@ -123,13 +132,32 @@ Backlog.prototype.priority = function(priority_value){
     this._priority = priority_value;
     return this;
 }
-
+Backlog.prototype.basedOn = function(task2){
+    assert(task2.getBrief);
+    this.prequisits.push(task2);
+    return this;
+}
+Backlog.prototype.after = function(task2){
+    this.basedOn(task2);
+    //also: ...
+    return this;
+}
 
 var backlogset=[];
+
 function addToBacklogset(b){
     //Check duplicates
     backlogset.push(b);
 }
+//backlogset.
+getTask = function(taskName){
+    for(var i=0;i<backlogset.length;i++)
+        if(backlogset[i]._id == taskName)
+            return backlogset[i];
+    assert(false, "Task with .id(\""+ taskName +"\") not found");
+}
+
+
 function todo(title){
     var b = new Backlog(title);
     //var b_id = getUniqueCode();
@@ -175,7 +203,7 @@ function print_some( whichones ){
 
                 
             var time_t = b.timeInitialEstimated==null?"":( "<small>"+ (b.timeInitialEstimated)+"h</small>" );
-s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\">"
+s1+="<li class=\"list-group-item "+ifactive+ifcontext+"\"    style=\"padding-top: 0px; padding-bottom: 0px;\" >"
             //s1 += "<li>";
             s1 += " <b>"+(ctr+1)+".</b> ";
             s1 += b.getBrief() ;
