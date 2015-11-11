@@ -3,7 +3,7 @@
 /* Data */
 
 sprints = [1,2,3,4,5,6,7,8,9];
-users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy", "alicia"];
+users = ["antonio", "patrick", "orial", "manon", "jean", "sohail", "alican", "hicham", "vitaliy", "alicia", "konstantin"];
 activeSprint = 8; // sprints[sprints.length-1];
 currentAimedVersion = 1; //currentAimedVersion
 
@@ -255,6 +255,7 @@ todo("python server must use REST API")
 .priority(100)
 .setSprint(8)
 //.assignTo("sohail") Jean? Vitaliy? (Constantin? Ali?)
+.assignTo("konstantin")
 ;
 
 
@@ -275,12 +276,14 @@ todo("Unit Tests for everything")
 
 todo("CSG: Fix bugs about subtraction")
 .priority(500)
+.setSprint(8)
 .assignTo("sohail")
 ;
 
 
 todo("Remove object sometimes leaves the boundig box. In such cases, the Replay breaks.")
 .priority(500)
+.setSprint(8)
 .assignTo("sohail")
 ;
 
