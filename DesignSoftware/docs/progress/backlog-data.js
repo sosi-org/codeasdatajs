@@ -245,7 +245,29 @@ todo("stream: toggle stream camera (as if twitch). tick: exact stream")
 .setVersion(2)
 ;
 
-todo("selectionmesh: separate create and update")
+todo("selectionmesh: separate create from update")
 .setSprint(8)
 .assignTo("sohail") //exclusive
+;
+
+todo("python server must use REST API")
+.isEpic()
+.priority(100)
+.setSprint(8)
+//.assignTo("sohail") Jean? Vitaliy? (Constantin? Ali?)
+;
+
+
+todo("j2js should be replaced with asDict")
+.setVersion(1)
+;
+
+todo("Each Shape should have .asDict()")
+.setVersion(1)
+.priority(100)
+//.assignTo("sohail") Jean? Vitaliy?
+;
+
+todo("Unit Tests for everything")
+.isEpic()
 ;
