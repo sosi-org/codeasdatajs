@@ -271,6 +271,7 @@ todo("Each Shape should have .asDict()")
 .inProgress()
 .setSprint(8) //.setSprint(8.2)
 .subSprint(8.2)
+.isEpic() //Otherwise, there will be errors when we call .within(...)
 ;
 
 todo("Unit Tests for everything")
@@ -317,9 +318,21 @@ todo("getdict: shapeFactory()")
 
 
 
-todo("getdict: unittest: decode.encode.equalsto")
+todo("getdict: unittest: x=string -> .decode -> .encode -> .equalsto(x)")
 .assignTo("patrick")
 .setSprint(8)
 .subSprint(8.2)
 .within(getTask("getdict"))
+;
+
+todo("getdict: change 'colour' to 'displaycolor'")
+.assignTo("patrick")
+.inProgress()
+.setSprint(8).subSprint(8.2)
+.within(getTask("getdict"))
+;
+
+
+
+todo("We don't want the socket.io to affect the performance at all. Everything should be done in a setTimeout()")
 ;

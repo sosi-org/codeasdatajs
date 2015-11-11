@@ -117,7 +117,7 @@ Backlog.prototype.toBacklog = function(){
     return this;
 }
 Backlog.prototype.isEpic = function(){
-    this.isEpic = true; //Now it can have subtasks
+    this._isEpic = true; //Now it can have subtasks
     return this;
 }
 var TIME_HOURS = 1.0;
@@ -154,6 +154,7 @@ Backlog.prototype.after = function(task2){
 }
 Backlog.prototype.within = function(task2){
     this.for_task = task2; //is constituent of another one
+    assert(task2._isEpic, "you can task.within(task2) only if task2 is .isEpic()");
     return this;
 }
 
