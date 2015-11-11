@@ -271,3 +271,25 @@ todo("Each Shape should have .asDict()")
 todo("Unit Tests for everything")
 .isEpic()
 ;
+
+
+todo("CSG: Fix bugs about subtraction")
+.priority(500)
+.assignTo("sohail")
+;
+
+
+todo("Remove object sometimes leaves the boundig box. In such cases, the Replay breaks.")
+.priority(500)
+.assignTo("sohail")
+;
+
+todo("Replay: the replay cannot be stopped. If something breaks during the replay the exception should be caught.")
+.assignTo("jean")
+;
+
+todo("Replay: the replay stop means Fast forward to end state.")
+.assignTo("jean")
+;
+
+todo("Grid: snap to sizes 2x and x/2 while resizing.");
