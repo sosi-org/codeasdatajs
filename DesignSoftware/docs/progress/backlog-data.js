@@ -9,12 +9,14 @@ currentAimedVersion = 1; //currentAimedVersion
 
 var mode = "essential";
 
-j12=todo("remove use of @dep argument from @init_updateannotation", "Dont remove the dep argument yet");
+todo("remove use of @dep argument from @init_updateannotation", "Dont remove the dep argument yet");
 
-j14=todo(
-    "Refector the root for 1-multiple instances, 2-include print settings, 3-include constraints, 4-include tools, 5-include metadata (owner,time,version)")
+t_refroot =
+todo(
+    "Refector the root for 1-multiple instances, 2-include print settings, 3-include constraints, 4-include tools, 5-include metadata")
     .moreInfo("clone should work + all of this included in state stack")
-    .addedAt("11:00am 5 Nov 2015")
+    //.addedAt("11:00am 5 Nov 2015") //deprecated
+    .inProgress("11:00am 5 Nov 2015") //come twith timeEst:  .inProgress("11:00am 5 Nov 2015", 2*TIME_DAYS)
     .isEpic()
     .timeEst(2*TIME_DAYS)
     .setSprint(8)
@@ -22,7 +24,35 @@ j14=todo(
     //.headline(""); or id?
 ;
 
-j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet")
+todo("refactor root and wrap it in a new class")
+.within(t_refroot)
+.assignTo("antonio")
+;
+
+todo("include printer settings in the new root-wrapper class")
+.within(t_refroot)
+.assignTo("antonio")
+;
+
+todo("refactor PrintSettings into a separate class similar to the PrinterSettings on  python side")
+.within(t_refroot)
+.assignTo("antonio")
+;
+todo("include constraints in the new root-wrapper class")
+.within(t_refroot)
+.assignTo("antonio")
+;
+todo("include the tools in the new root-wrapper class")
+.within(t_refroot)
+.assignTo("antonio")
+;
+todo("include metadata in the new root-wrapper class (owner,time,version)")
+.within(t_refroot)
+.assignTo("antonio")
+.inProgress("13:00 12 November 2015")
+;
+
+todo("A simple linear constraint system.", "Dont remove the dep argument yet")
 .assignTo("sohail")
 .setSprint(8)
 .done("at 2:57, 4th November")
@@ -36,14 +66,15 @@ j15=todo("A simple linear constraint system.", "Dont remove the dep argument yet
 
 todo("Slicer prints lines instead of Arcs")
 .assignTo("orial")
-.setSprint(8)
+.setSprint(8) //start or stop?
+.inProgress("2 Nov 2015  ???")
 ;
 
 var mode = "less important";
 
-j13=todo("show list of objects selected in the constraints sidebar.");
+todo("show list of objects selected in the constraints sidebar.");
 
-j14=todo("Checkbox for list of constaints.")
+todo("Checkbox for list of constaints.")
     .moreInfo("high-level description")
     .addedAt("11:00am 5 Nov 2015")
     .deadLine("7 November 2015")
@@ -376,3 +407,17 @@ todo("CSG: If MAXSCENEDEP is surpassed, an exception show be generated.")
 todo("Exceptions for impossible movements becasue of constriants.");
 todo("Check if isShape() is logivally the opposite of isTree()");
 
+
+todo("Hierarchy full revision and refactoring.")
+.after(t_refroot)
+.moreInfo("tempRoot, etc.")
+//.sprint(???)  //plan for sprint.  plan for user-sequence. plan for CPM.
+;
+
+todo("Hierarchy full revision and refactoring.");
+
+todo("Separate the ShapeTree into 3 subclasses: Union, Intersection, Subtraction")
+;
+
+//todo: consistency warning: an .inProgress() task has no .timeEst()
+//todo: date specified in .inProgress is not in the right format
