@@ -459,3 +459,51 @@ todo("Conflict detection function(). Uses a hash/checksum code")
 todo("Conflict indicator on top of screen (near the *LIVE logo). Should quickly come and go.")
 .within( getTask("conflict-detect") )
 ;
+
+
+todo("Mouse exit issue: the object is unselected. But if not, it causes forgetting the state.");
+
+todo("Initial delay: waiting for NoeJS");
+
+todo("UnitTests for new Shape types (for plugin).");
+
+
+todo("New environment plugins should be added to the UI options")
+.assignTo("alican");
+
+
+todo("New scene. Also check with the one used before the Sync")
+.assignTo("manon") //Speak to Sohail fo rmore inforatiom. 
+//.addedBy("sohail")
+;
+
+todo("Drag&Drop from screenshot-preview. New scene when drop from a png.");
+
+todo("updateScene from the queue");
+
+todo("The new shape should be dragged while mouse down.");
+
+todo("How to find out if the mouse button is down.")
+
+
+todo("Add note (comment) on each shape. (in mp5 getDict() )");
+todo("Right click: adds a note/comment. + Timestamp (& person) of that note.");
+
+todo("Add note to coordinates. (After the ref point feature)")
+.setVersion(2)
+;
+
+todo("Open and decompress the contents of a Solidworks file.")
+.assignTo("sohail")
+;
+
+todo("object creation Api (high level functions for Api.* ): used for tests.")
+.moreInfo("Api.makeCube() or Api.add(new Cube())??")
+;
+
+todo("A dict comparison: Compares all the float numbers with a given error for each quantity. Or: It calculates the sum of squared errors.")
+.setSprint(8)
+//.note("Needed for conflict detection in collaboration")
+.moreInfo("Needed for conflict detection in collaboration")
+;
+
