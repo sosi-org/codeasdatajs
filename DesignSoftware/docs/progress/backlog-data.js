@@ -27,11 +27,13 @@ todo(
 todo("refactor root and wrap it in a new class")
 .within(t_refroot)
 .assignTo("antonio")
+.done("Complete.")
 ;
 
 todo("include printer settings in the new root-wrapper class")
 .within(t_refroot)
 .assignTo("antonio")
+.done("Complete.")
 ;
 
 todo("refactor PrintSettings into a separate class similar to the PrinterSettings on  python side")
@@ -49,7 +51,7 @@ todo("include the tools in the new root-wrapper class")
 todo("include metadata in the new root-wrapper class (owner,time,version)")
 .within(t_refroot)
 .assignTo("antonio")
-.inProgress("13:00 12 November 2015")
+.done("Complete.")
 ;
 
 todo("A simple linear constraint system.", "Dont remove the dep argument yet")
@@ -187,6 +189,7 @@ todo("Check why the project name is incorrect after refreshing, but it is known 
 todo("Move root.js into src/shapes folder")
 .assignTo("antonio", "9 November 2015 21:02")
 .setSprint(8)
+.done("Complete.")
 ;
 
 //todo("Rename the 'webgl' folder into '3d'")  // 3d?  designer? three? web?
