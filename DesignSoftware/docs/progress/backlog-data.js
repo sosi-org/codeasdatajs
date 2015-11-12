@@ -256,6 +256,7 @@ todo("python server must use REST API")
 .setSprint(8)
 //.assignTo("sohail") Jean? Vitaliy? (Constantin? Ali?)
 .assignTo("konstantin")
+//.tightlyCoupledTo(getTask(****))
 ;
 
 
@@ -283,6 +284,8 @@ todo("CSG: Fix bugs about subtraction")
 .priority(500)
 .setSprint(8)
 .assignTo("sohail")
+.id("CSG-sub")
+.moreInfo("makeGroup() -> buildCSGMesh() -> buildCSG() ")
 ;
 
 
@@ -363,4 +366,13 @@ todo("Study AngularJS 2.0")
 todo("Study OT")
 //.isReading() //educaitonal
 ;
+
+//CSG bugs
+todo("CSG centerPoint should not depend on ThreeJS/Mesh");
+
+todo("CSG: If MAXSCENEDEP is surpassed, an exception show be generated.")
+;
+
+todo("Exceptions for impossible movements becasue of constriants.");
+todo("Check if isShape() is logivally the opposite of isTree()");
 

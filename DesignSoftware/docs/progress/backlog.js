@@ -166,7 +166,9 @@ Backlog.prototype.inProgress = function(whenStarted){
     //also: ...
     return this;
 }
-
+//Backlog.prototype.isNotreallyATask() = function(){
+//    return this.isepic || 
+//}
 
 // ************************************
 
@@ -203,7 +205,7 @@ function todo(title){
 function mouseOverUser(uname){
     //alert(uname);
     var userclassname = "user-"+uname;
-    console.log(userclassname);
+    //console.log(userclassname);
     /*
     the following changes the class
     var elements = document.getElementsByClassName(userclassname);
@@ -220,7 +222,7 @@ function mouseOverUser(uname){
 
 function mouseOverUserFinished(uname){
     var userclassname = "user-"+uname;
-    console.log(userclassname+"-------------");
+    //console.log(userclassname+"-------------");
     //$('.'+userclassname).css('font-weight', '300');    
     //$('.'+userclassname).css('color', '');
     $('.'+userclassname).css('background', 'none');
