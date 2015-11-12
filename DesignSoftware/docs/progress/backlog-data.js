@@ -320,6 +320,7 @@ todo("CSG: Fix bugs about subtraction")
 .assignTo("sohail")
 .id("CSG-sub")
 .moreInfo("makeGroup() -> buildCSGMesh() -> buildCSG() ")
+.isBug()
 ;
 
 
@@ -407,8 +408,10 @@ todo("CSG centerPoint should not depend on ThreeJS/Mesh");
 todo("CSG: If MAXSCENEDEP is surpassed, an exception show be generated.")
 ;
 
-todo("Exceptions for impossible movements becasue of constriants.");
+todo("Use exceptions handing for impossible movements becasue of constriants.");
+
 todo("Check if isShape() is logivally the opposite of isTree()");
+
 
 
 todo("Hierarchy full revision and refactoring.")
@@ -424,3 +427,34 @@ todo("Separate the ShapeTree into 3 subclasses: Union, Intersection, Subtraction
 
 //todo: consistency warning: an .inProgress() task has no .timeEst()
 //todo: date specified in .inProgress is not in the right format
+
+
+todo("disallow subtraction if more than two objects are subtracted.")
+.moreInfo("Assert this everywhere.")
+.moreInfo("Use alert to limit user. (Similar to subtration without intersection and constraint)")
+;
+
+todo("Collision Detection doesnt work on subtracted objects, sometimes! Involves rotation, CSG, etc.")
+.isBug() //.isIssue() //is a problem or is a bug
+;
+
+todo("New annotation class: Annotations should be according to the orientation (angle) of the object")
+.assignTo("antonio")
+;
+
+
+todo("SelectionMesh should be in a separate class, a Selection class maybe. As a member of the selection class?")
+;
+
+todo("Conflict detection System: with indicator")
+.isEpic()
+.id("conflict-detect")
+;
+
+todo("Conflict detection function(). Uses a hash/checksum code")
+.within( getTask("conflict-detect") )
+;
+
+todo("Conflict indicator on top of screen (near the *LIVE logo). Should quickly come and go.")
+.within( getTask("conflict-detect") )
+;

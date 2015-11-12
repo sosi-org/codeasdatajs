@@ -158,6 +158,13 @@ Backlog.prototype.within = function(task2){
     return this;
 }
 
+Backlog.prototype.isBug = function(){
+    this._isIssue = true; //can have .moreInfo()
+    //something is broken
+    return this;
+}
+
+
 Backlog.prototype.inProgress = function(whenStarted){
     if(!whenStarted) console.warn("Progress start time not specified");
     this._inprogress = true;
