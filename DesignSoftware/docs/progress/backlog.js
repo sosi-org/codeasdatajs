@@ -44,8 +44,7 @@ Backlog.prototype.done = function(report){
     return this;
 }
 Backlog.prototype.assignTo = function(person, when){
-    assert(users.indexOf(person)>-1, "User not valid");
-    this.assignedTo = person;
+    this.assignedTo = checkUser(person);
     this.whenAssigned = when;
     if(!when)
         console.log("Warning: Task assigned without assigned time. Task= " + this.title);
@@ -177,6 +176,29 @@ Backlog.prototype.inProgress = function(whenStarted){
 //    return this.isepic || 
 //}
 
+Backlog.prototype.tested = function(testReport){
+    this._tested = testReport;
+    return this;
+}
+
+function checkUser(person){
+    assert(users.indexOf(person)>-1, "User not valid");
+    return person+"";
+}
+function checkTime(timeString){
+    var ts = timeString; //todo: convert to UTC
+    return ts;
+}
+Backlog.prototype.codeReview = function(by, at, report){
+    this._reviewedBy = checkUser(by); //main boolean criterion
+    assert(this.assignedTo, "reviewer can be done only to a task that is done by a known person.");
+    assert(this.assignedTo != this._reviewedBy, "reviewer should be a different person.");
+    assert(this.doneReport, "Task has to be done before review."); //not sure
+    this._reviewedAt = checkTime(at);
+    this._reviewReport = report;
+    return this;
+}
+
 // ************************************
 
 var backlogset=[];
@@ -305,11 +327,29 @@ function print_all(){
     var total_count = 0;
     var ctr=0;
     //ctr += print_some;
-    var r = print_some(  function isaccomplished(b){return b.doneReport;});  //inclued irrelaant versions if not done. But don't include past versions and past sprints.  
+
+
+    var r = print_some(  function isaccomplished(b){return b.doneReport && b._reviewedBy;});  //inclued irrelaant versions if not done. But don't include past versions and past sprints.  
     var e = document.getElementById("DoneTasks");
     e.innerHTML = r.html;
     total_count += r.count;
 
+
+    var r = print_some(  function isaccomplished(b){return b.doneReport && !b._reviewedBy;});  //inclued irrelaant versions if not done. But don't include past versions and past sprints.  
+    var e = document.getElementById("TasksNeedReview");
+    e.innerHTML = r.html;
+    total_count += r.count;
+
+
+    /*
+    var r = print_some(  function isaccomplished(b){return b.doneReport;});  //inclued irrelaant versions if not done. But don't include past versions and past sprints.  
+    var e = document.getElementById("TestedReviewedTasks");
+    e.innerHTML = r.html;
+    total_count += r.count;
+    */
+    
+    //_reviewedBy
+    
     var r = print_some(  function isactive(b){
         var c=
         b._inprogress ||

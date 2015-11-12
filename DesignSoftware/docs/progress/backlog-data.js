@@ -141,6 +141,7 @@ todo("Slicer: Comand line mode")
 .setSprint(7)
 //.timeTook(9*TIME_HOURS)
 .done("Successful. Took 9 hours.")
+.codeReview("sohail", "??Nov 2015", "can use files from any folder. But sould not replace an existing file. Todo: dont use --input=")
 ;
 
 todo("Refactror the base field for Shape3D.")
