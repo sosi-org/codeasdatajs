@@ -116,10 +116,11 @@ todo("Highlight colour for a reminders (lamp icon)")
 .assignTo("alican");
 
 todo("Calculation of bounding boxes for shapes")
-.moreInfo("Analytical formulas for Bounding boxes. For all shapes works. Tested.")
+.moreInfo("Analytical formulas for Bounding boxes. ")
 .assignTo("vitaliy", "4 November 2015 at 11:12")
 .setSprint(8) //make it an active task
-.timeEst(30*TIME_HOURS)
+.actuallyTook(29*TIME_HOURS)
+.done("Succesful. Took 29 hours.")
 ;
 
 
@@ -158,6 +159,17 @@ todo("Tests for rotation matrix.")
 .actuallyTook(6*TIME_HOURS)
 .done("Successful. Important bug discovered. Took 6 hours.")
 .moreInfo("Description of the bug disovered: If axis is (0, 0, 0) => division by zero. In this case I think we should return diag(1, 1, 1).")
+;
+
+
+todo("Tests for arc containsPoint.")
+.assignTo("vitaliy", "? November 2015")
+.setSprint(8)
+.actuallyTook(7*TIME_HOURS)
+.done("Successful. Important bug discovered. Took 7 hours. Write own checker(similar function to containsPoint, but using different math)")
+.moreInfo("Description of the bug discovered: In some cases when two points of arc are the same, " +
+    "or point which we are checking equals to points of arc there can be an error. " +
+    "But in general this case are very rare")
 ;
 
 todo("Properties bar sometimes shows exception. It should be redesigned. We need to discuss")
@@ -318,9 +330,10 @@ todo("Unit Tests for everything")
 todo("CSG: Fix bugs about subtraction")
 .priority(500)
 .setSprint(8)
-.assignTo("sohail")
+.assignTo("vitaliy")
 .id("CSG-sub")
 .moreInfo("makeGroup() -> buildCSGMesh() -> buildCSG() ")
+.inProgress()
 .isBug()
 ;
 
