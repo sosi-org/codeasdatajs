@@ -134,6 +134,7 @@ todo("Install a NodeJS Docker image")
 .assignTo("jean", "9 Nov 2015 at 12:00")
 .timeEst(8*TIME_HOURS)
 .setSprint(8)
+.done("docker file is made but not linux script")
 ;
 
 todo("Slicer: Comand line mode")
