@@ -39,6 +39,7 @@ todo("include printer settings in the new root-wrapper class")
 todo("refactor PrintSettings into a separate class similar to the PrinterSettings on  python side")
 .within(t_refroot)
 .assignTo("antonio")
+.done("Complete.")
 ;
 todo("include constraints in the new root-wrapper class")
 .within(t_refroot)
