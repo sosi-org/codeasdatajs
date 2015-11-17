@@ -127,10 +127,13 @@ todo("Calculation of bounding boxes for shapes")
 ;
 
 
-todo("Add node.js deploy scripts on EC2")
+todo("Add node.js deploy scripts on EC2.")
 .assignTo("jean", "9 Nov 2015 at 12:00")
 .timeEst(8*TIME_HOURS)
 .setSprint(8)
+//.done("Docker-file is done")
+.moreInfo("Docker-file for nodeJS")
+.done("Docker-file is done")
 ;
 
 todo("Install a NodeJS Docker image")
@@ -189,11 +192,11 @@ todo("CodeReview: The details of the implementations of the magnet should be rev
 //.typeCodeReview(reviewer)  //done->test->review
 ;
 
-todo("Check why collision is not working sometimes.")
+todo("Check why collision is not working sometimes (needs debugging).")
 .moreInfo("For example: badcollision.1.mp5")
-.assignTo("manon", "9 November 2015")
-.priority(10)
-.setSprint(8)
+//.assignTo("manon", "9 November 2015").priority(10).setSprint(8)
+.assignTo("vitaliy", "17 November 2015")
+.setSprint(8).subSprint(8.3)
 ;
 
 todo("Check why the project name is incorrect after refreshing, but it is known when you save the unnamed.")
@@ -222,6 +225,7 @@ todo("Discuss: Why is function onDocumentMouseWheel(event) commentd?")
 todo("Run the designer (setup git, python3, server.py)")
 .assignTo("alicia", "10 November 2015")
 .setSprint(8)
+.done("She said she did it. Todo: check.")
 ;
 
 
@@ -308,11 +312,14 @@ todo("python server must use REST API")
 //.assignTo("sohail") Jean? Vitaliy? (Constantin? Ali?)
 .assignTo("konstantin")
 //.tightlyCoupledTo(getTask(****))
+.inProgress("Monday 16 November 2015")
+.moreInfo("Discussion in progress. almost final.")
 ;
 
 
 todo("j2js should be replaced with asDict")
 .setVersion(1)
+.inProgress()
 ;
 
 todo("Each Shape should have .asDict()")
@@ -473,6 +480,17 @@ todo("Conflict detection function(). Uses a hash/checksum code")
 .within( getTask("conflict-detect") )
 ;
 
+todo("Implement the approximate hash function between to shapes (for conflicts,etc)")
+;
+todo("Implement the equals function for shapes")
+;
+
+todo("Add timestamp to all shapes.")
+;
+
+
+
+
 todo("Conflict indicator on top of screen (near the *LIVE logo). Should quickly come and go.")
 .within( getTask("conflict-detect") )
 ;
@@ -524,3 +542,304 @@ todo("A dict comparison: Compares all the float numbers with a given error for e
 .moreInfo("Needed for conflict detection in collaboration")
 ;
 
+
+todo("Once again look into .obj, .3mf")
+;
+
+todo("Screenshot shows inner part of the screen. ")
+;
+
+todo("Screenshot should be **. ")
+;
+
+todo("Right mouse button: Move the bed exactly according to the movements of the mouse.")
+;
+
+todo("Prevent size Zero (use Constraint Exceptions)")
+//.definitelyAtVersion1()
+;
+
+
+todo("Node.js 'run' script (not the dockerfile)")
+.assignTo("jean")
+;
+
+todo("Slicer ignores subtractions")
+//.addedAt is deprecated
+// addedAt 17 Nov 2015
+.assignTo("orial")
+;
+
+
+todo("Slicer: Identify cause of moles")
+.setVersion(2)
+;
+
+todo("Slicer: tip of the cone is a disaster.")
+;
+
+todo("Loading socketio-related .js file takes forever. It should be loaded in parallel.")
+.setSprint(8)
+.subSprint(8.3)
+;
+
+todo("Make bed-aoiding constranit optional")
+;
+
+todo("UI reorganise (tree)")
+;
+
+todo("Bounding-box algorithm using implicit.")
+.priority(500)
+.assignTo("vitaliy")
+;
+
+todo("Find another UnitTest framework: requirement: ?????")
+;
+
+
+
+// short meeting: 17 Nov 2015
+
+todo("Somtimes the designer freezes");
+
+todo("view.html: later it will be used for two designer windows.");
+
+todo("make view.html an angularJS directive (or Django component).");
+
+todo("A second server using Django");
+
+todo("Socket.io: What heppenswhen the NodeJS is not available");
+
+todo("Socket.io: load delay should not delay the loading. It should be completely asynchronised. NodeJS can start after init.js and main.js");
+
+todo("Camera solution for rotating around the selected object (double click, etc).");
+
+todo("Camera: rotation center should be separated from the camera's target: Refactor: getTarget() and getRotaationCenter() + setters. Completely separate. ");
+
+todo("NEw camera button: ");
+
+todo("Make object properties (info) look flat (like ThreeJS editor)");
+
+todo("object properties (info): rewrite from scratch. The logic is just awfull. ");
+
+todo("object properties (info): definitely should not update the object properties after each key press /change. Only after an actual change (Enter, tab/losing focus, etc) ");
+
+todo("Camera's temporary rotate key (B) should make the camera orthographic");
+
+todo("Ortho - to perspective animation (smooth transition)");
+
+todo("Camera animation (transition), if interrupted, should not affect the target state (i.e. 22.5+22.5 degress).");
+
+todo("It is difficult to move behind an object");
+
+todo("Occluded annotaions: It is difficult to move an object inside another object. Solutiuons: 1,2,3");
+
+todo("Rename AnnotDots to ControlPoints");
+
+//todo("Rename Annotations to MaipulationConsotrlPoints");
+
+todo("Rotation of Shapes must not use ThreeJS");
+
+
+//todo("Camera: A button to turn behind the object : 180 deg.);
+todo("Camera: while temporary 180 deg pressed down, you still can edit as ususal. All mouse buttons should work.");
+
+
+todo("Camera: turn toward");
+todo("Camera: set rotation point");
+
+todo("Moving an object up is difficult.");
+
+todo("Set the default annotation type to arrows.");
+
+todo("Allow two annotations at the same time.");
+
+todo("Annotaiotns that are according to shapes orientation, and not Bounding Boxes.");
+
+todo("New shape: cone with top cut.")
+.setSprint(9)
+;
+
+todo("New shape: free-form cube.")
+.setSprint(9)
+;
+
+todo("New shape: quaternion.")
+.setSprint(9)
+;
+
+todo("New shape: free 3-vectors (parallelogaram).")
+;
+
+todo("Shape.getMinimalFeatures() . Can be ax,ay,ax   or can ebe Quaternion, or can be Free-3-vectors, or can be custom parameter. Use this in Shape Properties")
+;
+
+
+
+
+todo("New shape: empty & cut cone: Outersize-bottom, outersize-top, thickness")
+;
+
+todo("Slicer: subtraction does not work");
+
+
+todo("Avoid using TreeDeepCopy, using getDict() instead");
+
+todo("Hash using getDict()");
+
+todo("Magnet : refactor 'norm' to distance");
+
+todo("Conflict of sleection: ...");
+
+todo("Decide about the minimal align constraints.");
+
+todo("High-level contraint classes (with their .getDict ).");
+
+todo("UI: optional bed contstraint (KKT-type constraint, with FIX and Exception)");
+
+
+todo("Use exceptions everywhere");
+
+todo("A selection class");
+
+todo("Untangle init-annot & udate-annot into three dunctions: change selectedMesh, change selection, computer BoundingBox, update the Annotation object");
+
+todo("Second annotation visualisation, for second user (semi-transparent + different colour)");
+
+todo("Initial camera size should be moved into the configuration object + the atmosphere + the skin/theme. For fine-tuning the UX + for themes.");
+
+todo("Glow effect");
+
+todo("Occluded annotaions: Make object before the occluded annotations semi transparent. (hide all object on my way to touch)");
+
+todo("Occluded annotaions: Glow or overlay. ");
+
+todo("Occluded annotaions: Priority of their clickables (pointables). ");
+
+todo("Occluded annotaions: a feature like Z-order");
+
+todo("Occluded annotaions: allowing the user to make one object semi transparent. Or all others.");
+
+todo("write the updateFromDict() function")
+.priority(500)
+.assignTo("patrick")
+;
+//todo("rename shapeFactory() to createFromDict()")
+//;
+
+todo("Objects that are complex crash the designer")
+.priority(200)
+
+todo("The renderer resizing issue: change it back.")
+.priority(20)
+.assignTo("sohail")
+;
+
+todo("Ratio bug: The camera loses the aspect ratio. It currently can be solved using preessing the 'l' key twice. First, only identify why and where it happens.")
+.assignTo("antonio")
+;
+
+todo("Hierarchy bug 1")
+;
+
+
+todo("Hierarchy bug 2")
+;
+
+todo("Hierarchy bug 3")
+;
+
+todo("Hierarchy: refactor the cModel (cRoot) for the hierarchy temp thing. cModel.switchToTemp(branch). cModel.switchBackToRoot().  most of the calls to getRoot() will be calls to getCurrentRoot(). ")
+;
+
+todo("Unit testing the collabotation/server (details please from Manon/Jean)")
+;
+
+
+todo("Issue about 'save'ing the collaborative work. (?) (details please)");
+
+todo("Rotation: write a rotate that is not based on threejs.");
+
+
+todo("The Shape Properties box should use a function called Shape.getMinimalFeatures() to extract which parmaeters is hould show. It returns a list of paramters. Each parameter is {name:'length',units:'mm',type:'real'} and these strings are shown ins the propeties box.")
+;
+
+todo("The Shape Properties box should look flat, like THreeJS editor");
+
+todo("Annotaitons of a group selection should be different to the single-shape selection. The former uses bounding boxes and the latter uses free-form 3-vector parallelogram as the bounding box..");
+
+
+todo("A Sims-style annotation box on top of objects that need to be highlighted somehow. It will be used in 1-showing the selections of other users, notifying objects that have issues/reminders, etc.");
+
+
+todo("A two windows demo");
+
+todo("A view-only app. + Select project. (no mouse)");
+
+todo("A view-only mode. The use can still rorate the camera.");
+
+todo("updateScene is very inefficient and has increadible redundancy.");
+
+todo("Use coding standards of JS Hint");
+
+todo("Use minification from ...");
+
+todo("Read and use AngularJS's recommended practices");
+
+todo("Some actions change sleection. Bring the change of selection from the actual operations.");
+
+todo("CSG changes selection. bring the change of selection from the actual operations. (do after disentangling the initAnnot_update function)");
+
+todo("Camera: getDict()!")
+.assignTo("antonio");
+
+todo("Camera should be able to be transferred to other users.")
+
+todo("Change in Printer settings should be transferred between the collaborative users.")
+;
+
+todo("Other than root state, camera, printer settings, selection, etc should be shared.");
+
+todo("Action should be apprlied to cModel");
+
+todo("Locally, the action is done in a Queue, in the same way as remotely.");
+
+todo("rx.js");
+
+
+todo("A fast CSG algorithm");
+
+todo("Load object: a mini browser");
+
+todo("Note: a text added to each shape. It is a dicitonary with key-key-value: timestamp, user, text. In fact: user, (test,timestamp)"); //add: where? where = ip address, which compueer, (not GPS, etc)
+
+todo("Ali: atmosphere button shold get automatrically inclide all the choices.");
+
+todo("Print wysiwyg mode: As a new thee. + real colour of objects + their material.");
+
+todo("Show the bed only in the Wysiwyg (print preview) mode.");
+
+todo("Show the grid only in the Wysiwyg (print preview) mode!");
+
+todo("The username in beginning is null?");
+
+
+todo("Include getDict() in state stack (undo/redo).");
+
+todo("Use the getDict() in the Action s");
+
+todo("Use the new function as an Api function.");
+
+todo("Automatic check (test) of correspondence between the Api functions and the Actions.");
+
+todo("Maximum depth should be an exception, not an if")
+.priority(50)
+.assignTo("sohail")
+;
+
+
+todo("restructure the folders. DesignSoftware should not contain the server stuff. The src/webgl should be renamed. etc.")
+.moreInfo("Also see: http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript");
+
+todo("Check Jasmine, protractortest.org, karma-runner, ");

@@ -75,6 +75,9 @@ Backlog.prototype.subSprint = function(subSprintNumber){
 
 Backlog.prototype.setVersion = function(versionNumber){
     //Version first assigned, then postponed, etc.
+    if(this.version && this.version != versionNumber)
+        assert(false, "Version cannot be changed. Create a new task by using the .postpone() function (And postpone the original previous one).");
+
     validVersions=[1,2];
     assert(validVersions.indexOf(versionNumber)>-1, "version number is invalid" + versionNumber);
     if(this.version)
