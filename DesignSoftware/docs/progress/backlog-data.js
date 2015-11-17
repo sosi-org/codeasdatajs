@@ -589,6 +589,38 @@ todo("Make bed-aoiding constranit optional")
 todo("UI reorganise (tree)")
 ;
 
+todo("UI prototype by Vanea")
+;
+
+todo("Finalising the UI layout (gome screen).")
+;
+
+todo("UI layout of buttons.")
+;
+
+todo("Design of buttons.")
+;
+
+todo("Chat UI theme (CSS).")
+;
+
+todo("Design of UI using CSS.")
+;
+
+todo("Making features separate and possible to disable: Coolab, Theme, view, edit, UI, no tools, custom shapes, etc. To make it possible to have very lightweight versions")
+;
+
+todo("rename upadte.js into multiple files.");
+
+todo("redo the whole startup (startup levels, cache, etc).");
+
+todo("Django: expiration");
+
+todo("Django: customising: username, themes, ip address, (what else?)");
+
+todo("Multiple server automatically. Also able to synchronise them (replicate). Automatic spawn of docker instances, etc.")
+.setVersion(2); //or 3!
+
 todo("Bounding-box algorithm using implicit.")
 .priority(500)
 .assignTo("vitaliy")
