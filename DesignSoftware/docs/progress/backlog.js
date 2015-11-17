@@ -284,7 +284,7 @@ function print_some( whichones ){
             var ifactive =  ""; // (ctr==0)?" active":"";
                             //(ctr==0)?" panel-heading ":""; //doesnt work
             var ifcontext = //"";//(ctr%2==0)? " list-group-item-success":"";
-                (b._priority>=100)? "list-group-item-danger":"";
+                (b._priority> 0)? "list-group-item-danger":"";
                 
                 
                 /*

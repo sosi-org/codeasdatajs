@@ -9,6 +9,8 @@ currentAimedVersion = 1; //currentAimedVersion
 
 var mode = "essential";
 
+var w8 = 8;
+
 todo("remove use of @dep argument from @init_updateannotation", "Dont remove the dep argument yet");
 
 t_refroot =
@@ -398,6 +400,8 @@ todo("getdict: change 'colour' to 'displaycolor'")
 
 
 todo("We don't want the socket.io to affect the performance at all. Everything should be done in a setTimeout()")
+.setSprint(w8)
+.priority(200)
 ;
 
 
@@ -421,21 +425,30 @@ todo("The simple callback pattern for notifying AngularJS. Needs code review")
 
 todo("Study AngularJS 2.0")
 //.isReading() //educaitonal
+.setSprint(w8)
 ;
 
 todo("Study OT")
 //.isReading() //educaitonal
-;
+.setSprint(w8)
+.priority(100);
 
 //CSG bugs
-todo("CSG centerPoint should not depend on ThreeJS/Mesh");
-
-todo("CSG: If MAXSCENEDEP is surpassed, an exception show be generated.")
+todo("CSG centerPoint should not depend on ThreeJS/Mesh")
+.setSprint(w8)
 ;
 
-todo("Use exceptions handing for impossible movements becasue of constriants.");
+todo("CSG: If MAXSCENEDEP is surpassed, an exception show be generated.")
+.setSprint(w8)
+;
 
-todo("Check if isShape() is logivally the opposite of isTree()");
+todo("Use exceptions handing for impossible movements becasue of constriants.")
+.setSprint(w8)
+;
+
+todo("Check if isShape() is logically the opposite of isTree(). Refactor: mutually exclusive categories.")
+.setSprint(w8)
+;
 
 
 
@@ -443,49 +456,70 @@ todo("Hierarchy full revision and refactoring.")
 .after(t_refroot)
 .moreInfo("tempRoot, etc.")
 //.sprint(???)  //plan for sprint.  plan for user-sequence. plan for CPM.
+.setSprint(w8)
 ;
 
 todo("Hierarchy full revision and refactoring.");
 
 todo("Separate the ShapeTree into 3 subclasses: Union, Intersection, Subtraction")
+.setSprint(w8)
 ;
 
 //todo: consistency warning: an .inProgress() task has no .timeEst()
 //todo: date specified in .inProgress is not in the right format
 
 
+
+
 todo("disallow subtraction if more than two objects are subtracted.")
 .moreInfo("Assert this everywhere.")
 .moreInfo("Use alert to limit user. (Similar to subtration without intersection and constraint)")
+.setSprint(w8)
 ;
 
 todo("Collision Detection doesnt work on subtracted objects, sometimes! Involves rotation, CSG, etc.")
 .isBug() //.isIssue() //is a problem or is a bug
+.setSprint(w8)
 ;
 
 todo("New annotation class: Annotations should be according to the orientation (angle) of the object")
 .assignTo("antonio")
+.setSprint(w8)
 ;
 
 
 todo("SelectionMesh should be in a separate class, a Selection class maybe. As a member of the selection class?")
+.setSprint(w8)
 ;
 
 todo("Conflict detection System: with indicator")
 .isEpic()
 .id("conflict-detect")
+.setSprint(w8)
 ;
 
 todo("Conflict detection function(). Uses a hash/checksum code")
 .within( getTask("conflict-detect") )
+.setSprint(w8)
 ;
 
 todo("Implement the approximate hash function between to shapes (for conflicts,etc)")
+.setSprint(w8)
 ;
 todo("Implement the equals function for shapes")
+.setSprint(w8)
+;
+
+todo("Implement the almostequal function for shapes (given tolerance)")
+.setSprint(w8)
+;
+
+todo("Read the almost equal link for floating point comparisons")
+.setSprint(w8)
 ;
 
 todo("Add timestamp to all shapes.")
+.setSprint(w8)
 ;
 
 
@@ -493,36 +527,63 @@ todo("Add timestamp to all shapes.")
 
 todo("Conflict indicator on top of screen (near the *LIVE logo). Should quickly come and go.")
 .within( getTask("conflict-detect") )
+.setSprint(w8)
 ;
 
 
-todo("Mouse exit issue: the object is unselected. But if not, it causes forgetting the state.");
+todo("Mouse exit issue: the object is unselected. But if not, it causes forgetting the state.")
+.setSprint(w8)
+;
 
-todo("Initial delay: waiting for NoeJS");
+todo("Initial delay: waiting for NoeJS")
+.setSprint(w8)
+;
 
-todo("UnitTests for new Shape types (for plugin).");
+todo("UnitTests for new Shape types (for plugin).")
+.setSprint(w8)
+;
 
 
 todo("New environment plugins should be added to the UI options")
-.assignTo("alican");
+.assignTo("alican")
+.setSprint(w8)
+;
 
 
 todo("New scene. Also check with the one used before the Sync")
 .assignTo("manon") //Speak to Sohail fo rmore inforatiom. 
 //.addedBy("sohail")
+.setSprint(w8)
 ;
 
-todo("Drag&Drop from screenshot-preview. New scene when drop from a png.");
+todo("Drag&Drop from screenshot-preview. New scene when drop from a png.")
+.setSprint(w8)
+;
 
-todo("updateScene from the queue");
+todo("updateScene from the queue")
+.setSprint(w8)
+;
 
-todo("The new shape should be dragged while mouse down.");
+todo("The new shape should be dragged while mouse down.")
+.setSprint(w8)
+;
 
 todo("How to find out if the mouse button is down.")
+.setSprint(w8)
+;
 
+todo("Make all buttons flat: the <a></a> part should include all of the icon.")
+.setSprint(w8)
+.priority(100)
+.assignTo("alican")
+;
 
-todo("Add note (comment) on each shape. (in mp5 getDict() )");
-todo("Right click: adds a note/comment. + Timestamp (& person) of that note.");
+todo("Add note (comment) on each shape. (in mp5 getDict() )")
+.setSprint(w8)
+;
+todo("Right click: adds a note/comment. + Timestamp (& person) of that note.")
+.setSprint(w8)
+;
 
 todo("Add note to coordinates. (After the ref point feature)")
 .setVersion(2)
@@ -530,93 +591,148 @@ todo("Add note to coordinates. (After the ref point feature)")
 
 todo("Open and decompress the contents of a Solidworks file.")
 .assignTo("sohail")
+.setSprint(w8)
 ;
 
 todo("object creation Api (high level functions for Api.* ): used for tests.")
 .moreInfo("Api.makeCube() or Api.add(new Cube())??")
+.setSprint(w8)
 ;
 
 todo("A dict comparison: Compares all the float numbers with a given error for each quantity. Or: It calculates the sum of squared errors.")
-.setSprint(8)
+.setSprint(w8)
 //.note("Needed for conflict detection in collaboration")
 .moreInfo("Needed for conflict detection in collaboration")
 ;
 
 
 todo("Once again look into .obj, .3mf")
+.setSprint(w8)
 ;
 
-todo("Screenshot shows inner part of the screen. ")
+todo("Screenshot to show the inner part of the screen. ")
+.setSprint(w8)
 ;
 
-todo("Screenshot should be **. ")
+todo("Slice one slice: part 1: slice planes")
+.setSprint(w8)
+;
+
+todo("Material palette choses the whole printer settings. + thickness, etc. + colour, etc.")
+.setSprint(w8)
+.priority(100) //force!
+;
+
+todo("Printer settings should include extrusion withth. But as a sibling-subclass of the older one (both cluient and server).")
+.setSprint(w8)
+;
+
+todo("Sepearete material: for version 2. (layers, separate, material regions)")
+.setSprint(w8)
+;
+
+todo("Screenshot should be updated without flicker. ")
+.setSprint(w8)
 ;
 
 todo("Right mouse button: Move the bed exactly according to the movements of the mouse.")
+.setSprint(w8)
+.priority(30)
 ;
 
 todo("Prevent size Zero (use Constraint Exceptions)")
 //.definitelyAtVersion1()
+.setSprint(w8)
+.priority(40)
 ;
+
 
 
 todo("Node.js 'run' script (not the dockerfile)")
 .assignTo("jean")
+.setSprint(w8)
 ;
 
 todo("Slicer ignores subtractions")
 //.addedAt is deprecated
 // addedAt 17 Nov 2015
 .assignTo("orial")
+.setSprint(w8)
 ;
 
 
 todo("Slicer: Identify cause of moles")
 .setVersion(2)
+.setSprint(w8)
 ;
 
 todo("Slicer: tip of the cone is a disaster.")
+.setSprint(w8)
 ;
 
 todo("Loading socketio-related .js file takes forever. It should be loaded in parallel.")
-.setSprint(8)
+.setSprint(w8)
 .subSprint(8.3)
 ;
 
 todo("Make bed-aoiding constranit optional")
+.setSprint(w8).subSprint(8.3)
 ;
 
 todo("UI reorganise (tree)")
+.setSprint(w8).subSprint(8.3)
+.inProgress()
 ;
 
 todo("UI prototype by Vanea")
+.setSprint(w8).subSprint(8.3)
 ;
 
-todo("Finalising the UI layout (gome screen).")
+todo("Finalising the UI layout (home screen).")
+.setSprint(w8).subSprint(8.3)
 ;
 
 todo("UI layout of buttons.")
+.setSprint(w8)
 ;
 
-todo("Design of buttons.")
+todo("Design of buttons: Sketch (and indicators) (and layers)")
+.setSprint(w8).subSprint(8.3)
 ;
+
+todo("Design of buttons: finalise")
+.setSprint(w8).subSprint(8.3)
+;
+
+
+
 
 todo("Chat UI theme (CSS).")
+.setSprint(w8)
 ;
 
 todo("Design of UI using CSS.")
+.setSprint(w8)
 ;
 
 todo("Making features separate and possible to disable: Coolab, Theme, view, edit, UI, no tools, custom shapes, etc. To make it possible to have very lightweight versions")
 ;
 
-todo("rename upadte.js into multiple files.");
+todo("rename update.js into multiple files.")
+.setSprint(w8)
+;
 
-todo("redo the whole startup (startup levels, cache, etc).");
+todo("redo the whole startup (startup levels, cache, etc).")
+.setSprint(w8)
+;
 
-todo("Django: expiration");
+todo("Django: expiry time for files, urls")
+.setSprint(w8)
+;
 
-todo("Django: customising: username, themes, ip address, (what else?)");
+todo("Django: customising: username, themes, ip address, (what else?)")
+.setSprint(w8)
+;
 
 todo("Multiple server automatically. Also able to synchronise them (replicate). Automatic spawn of docker instances, etc.")
 .setVersion(2); //or 3!
@@ -624,70 +740,163 @@ todo("Multiple server automatically. Also able to synchronise them (replicate). 
 todo("Bounding-box algorithm using implicit.")
 .priority(500)
 .assignTo("vitaliy")
+.setSprint(w8)
 ;
 
 todo("Find another UnitTest framework: requirement: ?????")
+.setSprint(w8)
 ;
 
 
 
 // short meeting: 17 Nov 2015
 
-todo("Somtimes the designer freezes");
+todo("Somtimes the designer freezes")
+.setSprint(w8)
+;
 
-todo("view.html: later it will be used for two designer windows.");
+todo("view.html: later it will be used for two designer windows.")
+.setSprint(w8)
+;
 
-todo("make view.html an angularJS directive (or Django component).");
+todo("make view.html an angularJS directive (or Django component).")
+.setSprint(w8)
+;
 
-todo("A second server using Django");
+todo("A second separate server software using Django (3 softwares: slicer, django-slicer, django web server, js-client)")
+.setSprint(w8)
+;
 
-todo("Socket.io: What heppenswhen the NodeJS is not available");
+todo("Socket.io: What heppenswhen the NodeJS is not available")
+.setSprint(w8)
+;
 
-todo("Socket.io: load delay should not delay the loading. It should be completely asynchronised. NodeJS can start after init.js and main.js");
+todo("Socket.io: load delay should not delay the loading. It should be completely asynchronised. NodeJS can start after init.js and main.js")
+.setSprint(w8)
+;
+
+todo("Must run only on Chrome")
+.setSprint(w8)
+;
+
+todo("Sometimes non-chrome browsers are not detected.")
+.setSprint(w8)
+;
+
+todo("Try Safari and FireFox JS.")
+.setSprint(w8)
+;
+
+todo("If not Chrome, redirect to Chrome download page")
+.setSprint(w8)
+;
 
 todo("Camera solution for rotating around the selected object (double click, etc).");
 
 todo("Camera: rotation center should be separated from the camera's target: Refactor: getTarget() and getRotaationCenter() + setters. Completely separate. ");
 
-todo("NEw camera button: ");
+todo("New camera button: ??")
+.setSprint(w8)
+;
 
-todo("Make object properties (info) look flat (like ThreeJS editor)");
+todo("Camera button: Orthographic button")
+;
 
-todo("object properties (info): rewrite from scratch. The logic is just awfull. ");
+todo("Camera in style of Catia")
+;
 
-todo("object properties (info): definitely should not update the object properties after each key press /change. Only after an actual change (Enter, tab/losing focus, etc) ");
+todo("Camera button 'image' updae according to the next state")
+.setSprint(w8)
+;
 
-todo("Camera's temporary rotate key (B) should make the camera orthographic");
+todo("reticle (version 2)")
+;
 
-todo("Ortho - to perspective animation (smooth transition)");
+todo("Make the camera's 'b' animated")
+.setSprint(w8)
+;
 
-todo("Camera animation (transition), if interrupted, should not affect the target state (i.e. 22.5+22.5 degress).");
+todo("Camera's temporary rotate key (B) should make the camera orthographic")
+.setSprint(w8)
+;
 
-todo("It is difficult to move behind an object");
 
-todo("Occluded annotaions: It is difficult to move an object inside another object. Solutiuons: 1,2,3");
+todo("Bring back the primitives")
+.setSprint(w8)
+.priority(100)
+;
 
-todo("Rename AnnotDots to ControlPoints");
+todo("Make object properties (info) look flat (like ThreeJS editor)")
+.setSprint(w8)
+;
+
+
+todo("object properties (info): rewrite from scratch. The logic is just awfull. ")
+.setSprint(w8)
+.priority(100)
+;
+
+todo("object properties (info): definitely should not update the object properties after each key press /change. Only after an actual change (Enter, tab/losing focus, etc) ")
+.setSprint(w8)
+.priority(100)
+;
+
+
+todo("Ortho - to perspective animation (smooth transition)")
+//.setSprint(w8)
+;
+
+todo("Camera animation (transition), if interrupted, should not affect the target state (i.e. 22.5+22.5 degress).")
+.setSprint(w8)
+;
+
+todo("It is difficult to move behind an object")
+;
+
+todo("Occluded annotaions: It is difficult to move an object inside another object. Solutiuons: 1,2,3")
+//.setSprint(w8)
+;
+
+todo("Rename AnnotDots to ControlPoints")
+.setSprint(w8)
+;
 
 //todo("Rename Annotations to MaipulationConsotrlPoints");
 
-todo("Rotation of Shapes must not use ThreeJS");
+todo("Rotation of Shapes must not use ThreeJS")
+.setSprint(w8)
+;
 
 
 //todo("Camera: A button to turn behind the object : 180 deg.);
-todo("Camera: while temporary 180 deg pressed down, you still can edit as ususal. All mouse buttons should work.");
+todo("Camera: while temporary 180 deg pressed down, you still can edit as ususal. All mouse buttons should work.")
+//.setSprint(w8)
+;
 
 
-todo("Camera: turn toward");
-todo("Camera: set rotation point");
+todo("Camera: 'turn toward' function (method) & buttoon (changes the target point to the selected object)")
+.setSprint(w8)
+;
+todo("Camera: set rotation point: function (method) & button ")
+.setSprint(w8)
+;
 
-todo("Moving an object up is difficult.");
+todo("Moving an object up is difficult.")
+.setSprint(w8)
+.priority(100)
+;
 
-todo("Set the default annotation type to arrows.");
+todo("Set the default annotation type to arrows.")
+.setSprint(w8)
+;
 
-todo("Allow two annotations at the same time.");
+todo("Allow two annotations at the same time.")
+.setSprint(w8)
+;
 
-todo("Annotaiotns that are according to shapes orientation, and not Bounding Boxes.");
+todo("Annotaiotns that are according to shapes orientation, and not Bounding Boxes.")
+.setSprint(w8)
+;
 
 todo("New shape: cone with top cut.")
 .setSprint(9)
@@ -698,60 +907,145 @@ todo("New shape: free-form cube.")
 ;
 
 todo("New shape: quaternion.")
-.setSprint(9)
+//version(2)
 ;
 
 todo("New shape: free 3-vectors (parallelogaram).")
+//version 2
 ;
 
 todo("Shape.getMinimalFeatures() . Can be ax,ay,ax   or can ebe Quaternion, or can be Free-3-vectors, or can be custom parameter. Use this in Shape Properties")
+.setSprint(w8)
+.priority(50)
 ;
 
 
+todo("copy & paste using the real clipboard")
+.setSprint(8)
+.priority(50)
+;
 
 
 todo("New shape: empty & cut cone: Outersize-bottom, outersize-top, thickness")
+//version 2
 ;
 
-todo("Slicer: subtraction does not work");
+todo("Slicer: subtraction does not work")
+.setSprint(w8)
+.priority(50)
+;
 
 
-todo("Avoid using TreeDeepCopy, using getDict() instead");
+todo("Avoid using TreeDeepCopy, using getDict() instead")
+.setSprint(w8)
+;
 
-todo("Hash using getDict()");
+todo("Hash using getDict()")
+.setSprint(w8)
+.priority(30)
+;
 
-todo("Magnet : refactor 'norm' to distance");
+todo("Magnet : refactor 'norm' to distance")
+.setSprint(w8)
+;
 
-todo("Conflict of sleection: ...");
-
-todo("Decide about the minimal align constraints.");
-
-todo("High-level contraint classes (with their .getDict ).");
-
-todo("UI: optional bed contstraint (KKT-type constraint, with FIX and Exception)");
+todo("Conflict of selection during collaboration: ...")
+.setSprint(w8)
+;
 
 
-todo("Use exceptions everywhere");
+todo("Indicator of collaboration: collaboration mode")
+.setSprint(w8)
+;
 
-todo("A selection class");
+todo("Indicator of connection (separate from collaboration)")
+.setSprint(w8)
+;
 
-todo("Untangle init-annot & udate-annot into three dunctions: change selectedMesh, change selection, computer BoundingBox, update the Annotation object");
+todo("Indicator of constraints. Includes: checkbox for bed constraint")
+.setSprint(w8)
+;
 
-todo("Second annotation visualisation, for second user (semi-transparent + different colour)");
+todo("The issue of group selected objects in Api & Action: when applying the bed constraint. currentMeshes")
+.setSprint(w8)
+.priority(100)
+;
 
-todo("Initial camera size should be moved into the configuration object + the atmosphere + the skin/theme. For fine-tuning the UX + for themes.");
+todo("Refactor the bed constraint: fix, throw, ... . In the same form of other constaints. i.e. apply()")
+.setSprint(w8)
+;
 
-todo("Glow effect");
+todo("Refactor the zero-size as a constraint? Or (and!) throw an excedption when a shape is resized to too small.")
+.setSprint(w8)
+;
 
-todo("Occluded annotaions: Make object before the occluded annotations semi transparent. (hide all object on my way to touch)");
 
-todo("Occluded annotaions: Glow or overlay. ");
+todo("refactor the currentMeshes into the currentShapes")
+.setSprint(w8)
+;
 
-todo("Occluded annotaions: Priority of their clickables (pointables). ");
+todo("Enforce the logic of separation from meshes, in currentShapes, Api, Action, etc.  Shapes, Dict()s, Meshes, etc.")
+.setSprint(w8)
+;
 
-todo("Occluded annotaions: a feature like Z-order");
+todo("Decide about the minimalistic align constraints.")
+.setSprint(w8)
+;
 
-todo("Occluded annotaions: allowing the user to make one object semi transparent. Or all others.");
+todo("High-level contraint classes (with their .getDict ).")
+.setSprint(w8)
+;
+
+todo("UI: checkbox: optional bed contstraint (KKT-type constraint, with FIX and Exception)")
+.setSprint(w8)
+;
+
+
+todo("Use exceptions everywhere")
+.setSprint(w8)
+;
+
+todo("A Selection class")
+.setSprint(w8)
+;
+
+todo("Untangle init-annot & udate-annot into three dunctions: change selectedMesh, change selection, computer BoundingBox, update the Annotation object")
+.setSprint(w8)
+.priority(50) //.panic()! .concern()!
+;
+
+todo("Second annotation 'visualisation', for second user (semi-transparent + different colour)")
+.setSprint(w8)
+;
+
+todo("Initial camera size should be moved into the configuration object + the atmosphere + the skin/theme. For fine-tuning the UX + for themes.")
+.setSprint(w8)
+;
+
+todo("Glow effect") //may need upgrading  ThreeJS
+.assignTo("sohail")
+.setSprint(w8)
+;
+
+todo("Occluded annotaions: Make object before the occluded annotations semi transparent. (hide all object on my way to touch)")
+.setSprint(w8)
+;
+
+todo("Occluded annotaions: Glow or overlay. ")
+//.setSprint(w8)
+;
+
+todo("Occluded annotaions: Priority of their clickables (pointables). ")
+//.setSprint(w8) //not sure about the priority.  
+//not veriosn 1!
+;
+
+todo("Occluded annotaions: a feature like Z-order (try)")
+.setSprint(w8)
+;
+
+todo("Occluded annotaions: allowing the user to make one object semi transparent. Or all others.")
+;
 
 todo("write the updateFromDict() function")
 .priority(500)
@@ -762,116 +1056,374 @@ todo("write the updateFromDict() function")
 
 todo("Objects that are complex crash the designer")
 .priority(200)
+.setSprint(w8)
+;
 
 todo("The renderer resizing issue: change it back.")
 .priority(20)
 .assignTo("sohail")
+.setSprint(w8)
 ;
 
 todo("Ratio bug: The camera loses the aspect ratio. It currently can be solved using preessing the 'l' key twice. First, only identify why and where it happens.")
 .assignTo("antonio")
+.setSprint(w8)
 ;
 
 todo("Hierarchy bug 1")
+.setSprint(w8)
 ;
 
 
 todo("Hierarchy bug 2")
+.setSprint(w8)
 ;
 
 todo("Hierarchy bug 3")
+.setSprint(w8)
 ;
 
 todo("Hierarchy: refactor the cModel (cRoot) for the hierarchy temp thing. cModel.switchToTemp(branch). cModel.switchBackToRoot().  most of the calls to getRoot() will be calls to getCurrentRoot(). ")
+.setSprint(w8)
 ;
 
 todo("Unit testing the collabotation/server (details please from Manon/Jean)")
+.setSprint(w8)
 ;
 
 
-todo("Issue about 'save'ing the collaborative work. (?) (details please)");
+todo("Issue about 'save'ing the collaborative work. (?) (details please)")
+.setSprint(w8)
+;
 
-todo("Rotation: write a rotate that is not based on threejs.");
+todo("Rotation: write a rotate that is not based on threejs.")
+.setSprint(w8)
+;
 
 
 todo("The Shape Properties box should use a function called Shape.getMinimalFeatures() to extract which parmaeters is hould show. It returns a list of paramters. Each parameter is {name:'length',units:'mm',type:'real'} and these strings are shown ins the propeties box.")
+.setSprint(w8)
 ;
 
-todo("The Shape Properties box should look flat, like THreeJS editor");
+todo("The Shape Properties box should look flat, like THreeJS editor")
+.setSprint(w8)
+;
 
-todo("Annotaitons of a group selection should be different to the single-shape selection. The former uses bounding boxes and the latter uses free-form 3-vector parallelogram as the bounding box..");
+todo("Annotaitons of a group selection should be different to the single-shape selection. The former uses bounding boxes and the latter uses free-form 3-vector parallelogram as the bounding box..")
+.setSprint(w8)
+;
 
 
-todo("A Sims-style annotation box on top of objects that need to be highlighted somehow. It will be used in 1-showing the selections of other users, notifying objects that have issues/reminders, etc.");
+todo("A Sims-style annotation box on top of objects that need to be highlighted somehow. It will be used in 1-showing the selections of other users, notifying objects that have issues/reminders, etc.")
+.setSprint(w8)
+;
 
 
-todo("A two windows demo");
+todo("A two windows demo")
+.setSprint(w8)
+;
 
-todo("A view-only app. + Select project. (no mouse)");
+todo("A view-only app. + Select project. (no mouse)")
+.setSprint(w8)
+;
 
-todo("A view-only mode. The use can still rorate the camera.");
+todo("A view-only mode. The use can still rorate the camera.")
+.setSprint(w8)
+;
 
-todo("updateScene is very inefficient and has increadible redundancy.");
+todo("updateScene is very inefficient and has increadible redundancy.")
+.setSprint(w8)
+;
 
-todo("Use coding standards of JS Hint");
+todo("Use coding standards of JS Hint")
+.setSprint(w8)
+;
 
 todo("Use minification from ...");
 
-todo("Read and use AngularJS's recommended practices");
-
-todo("Some actions change sleection. Bring the change of selection from the actual operations.");
-
-todo("CSG changes selection. bring the change of selection from the actual operations. (do after disentangling the initAnnot_update function)");
-
-todo("Camera: getDict()!")
-.assignTo("antonio");
-
-todo("Camera should be able to be transferred to other users.")
-
-todo("Change in Printer settings should be transferred between the collaborative users.")
+todo("Read and use AngularJS's recommended practices")
+.setSprint(w8)
 ;
 
-todo("Other than root state, camera, printer settings, selection, etc should be shared.");
+todo("Some actions change sleection. Bring the change of selection from the actual operations.")
+.setSprint(w8)
+;
 
-todo("Action should be apprlied to cModel");
+todo("CSG changes selection. bring the change of selection from the actual operations. (do after disentangling the initAnnot_update function)")
+.setSprint(w8)
+;
 
-todo("Locally, the action is done in a Queue, in the same way as remotely.");
+todo("Camera: getDict()!")
+.assignTo("antonio")
+.setSprint(w8)
+;
 
-todo("rx.js");
+todo("Camera should be able to be transferred to other users.")
+;
+
+todo("Change in Printer settings should be transferred between the collaborative users. (Action)")
+.setSprint(w8)
+;
+
+todo("Testable Api methods. Able to use as a script.");
+
+todo("Other than root state, camera, printer settings, selection, etc should be shared.")
+.setSprint(w8)
+;
+
+todo("Refactor: Action should be applied to cModel (also check the Api)")
+.setSprint(w8)
+;
+
+todo("Locally, the action is done in a Queue, in the same way as remotely.")
+.setSprint(w8)
+;
+
+todo("rx.js")
+//.setSprint(w8)
+;
 
 
-todo("A fast CSG algorithm");
+todo("A fast CSG algorithm")
+//.setSprint(w8)
+;
 
-todo("Load object: a mini browser");
+todo("Load object: a mini browser")
+.setSprint(w8)
+;
 
-todo("Note: a text added to each shape. It is a dicitonary with key-key-value: timestamp, user, text. In fact: user, (test,timestamp)"); //add: where? where = ip address, which compueer, (not GPS, etc)
+todo("Note/comment: a text added to each shape. It is a dicitonary with key-key-value: timestamp, user, text. In fact: user, (test,timestamp)")
+//add: where? where = ip address, which compueer, (not GPS, etc)
+.setSprint(w8)
+;
 
-todo("Ali: atmosphere button shold get automatrically inclide all the choices.");
+todo("Not/comment on a 3d point in space: refpoints")
+//ver2?
+;
 
-todo("Print wysiwyg mode: As a new thee. + real colour of objects + their material.");
+todo("Ref-points")
+;
 
-todo("Show the bed only in the Wysiwyg (print preview) mode.");
+todo("Ali: atmosphere button should get automatrically include all the choices.")
+.setSprint(w8)
+.priority(100)
+;
 
-todo("Show the grid only in the Wysiwyg (print preview) mode!");
+todo("Print wysiwyg mode: As a new thee. + real colour of objects + their material.")
+.setSprint(w8)
+;
 
-todo("The username in beginning is null?");
+todo("Show the bed only in the Wysiwyg (print preview) mode.")
+.setSprint(w8)
+;
+
+todo("Show the grid only in the Wysiwyg (print preview) mode!")
+.setSprint(w8)
+;
+
+todo("The username in beginning is null?")
+.setSprint(w8)
+.priority(100)
+;
 
 
-todo("Include getDict() in state stack (undo/redo).");
+todo("Include getDict() in state stack (undo/redo).")
+.setSprint(w8)
+;
 
-todo("Use the getDict() in the Action s");
+todo("Use the getDict() in the Action s")
+.setSprint(w8)
+;
 
-todo("Use the new function as an Api function.");
+todo("Use the 'new shape' function as an Api function. (refactor)")
+.setSprint(w8)
+;
 
-todo("Automatic check (test) of correspondence between the Api functions and the Actions.");
+todo("Automatic check (test) of correspondence between the Api functions and the Actions.")
+.setSprint(w8)
+;
 
 todo("Maximum depth should be an exception, not an if")
 .priority(50)
 .assignTo("sohail")
+.setSprint(w8)
 ;
 
 
 todo("restructure the folders. DesignSoftware should not contain the server stuff. The src/webgl should be renamed. etc.")
-.moreInfo("Also see: http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript");
+.moreInfo("Also see: http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript")
+.setSprint(w8)
+;
 
-todo("Check Jasmine, protractortest.org, karma-runner, ");
+todo("Check Jasmine, protractortest.org, karma-runner, ")
+.setSprint(w8)
+;
+
+
+todo("Dark blue wireframe theme (Avengers)")
+.setSprint(w8)
+;
+
+
+
+todo("Search in public objects in profiles: by object names, is designed, is collaborated")
+;
+
+todo("List of objects in profiles of each person")
+;
+
+
+todo("Searching people. By: username, name, ") //sarch on peopepl at least
+.priority(100)
+.setSprint(w8)
+;
+
+
+todo("Collection of objects (favourite objects of each user)")
+.setVersion(2)
+;
+
+todo("Display of tree of versions by owners. ") //should we use "git"?
+.setVersion(2)
+;
+
+todo("Followers, visitors, ")
+//
+;
+
+todo("Collecting statistics: about button usage.")
+//.setSprint(w8)
+;
+
+
+todo("How many people are watching live: in web view")
+.setSprint(w8) //high priority
+;
+
+todo("How many visited this profile, likes, cheers, ")
+.moreInfo("We use google analytics for now.")
+;
+
+todo("Current people present (watching) in the room: list in the sidebar. Watchers + Collaborators")
+.setSprint(w8)
+;
+
+
+todo("By default, you are public. A random URL is created. renamable.")
+.setSprint(w8)
+;
+
+todo("Chat: you are public without logging in?")
+.setSprint(w8)
+;
+
+todo("You may watch wihout chatting, becasue chatting requires login")
+.setSprint(w8)
+;
+
+//you are on main page
+//designing no barrier
+//watch: no barrier
+//collaborate (to another person's) or chat: you need login
+//collaborating wihtout login bu t with sharing URL with them. ---> invite --> needs login.
+
+//If I am not loggiedin, I can share my URL. I will be public. I can decide not to be public. I can be private and share my URL with my Grandmother. This does not depend if I am logged in or not loged in.
+//Invite for collaboration: invite-only.  // ---> speak to M&J.
+
+//Invite button: 2 types: link , username: two ways.
+//They ask for collaboration.
+//make the link no more coollab-able. or not watch-able.
+
+
+
+todo("Show avtar of the one who selected")
+.priority(50)
+//needed for selection, undo notification, etc
+.setSprint(w8)
+;
+
+
+todo("Avatars for users: Use an existing Api. Integrat or use avatars of https://en.gravatar.com/")
+.setSprint(w8)
+;
+
+
+
+todo("Ping from server for latenccy of each user. (every 5 minute). Show the latency for each user: ")
+.setSprint(w8)
+.priority(100)
+;
+//you have to wait
+
+todo("Apply a delay for test (stress test). + Queue. To debug & test conflicts we need to create conflict.")
+.setSprint(w8)
+.priority(40)
+;
+
+
+/*
+
+* roll back the changes if (it is reealed that ) somebody else was on it before you.
+delay before selecting
+delay after selecting  ---> based ont eh measured latency.
+base on time (latest change).
+based on time: selection belongs to the earliest "selector" which is still selecting. (when released, should the other person select again?)
+//aperson may select everything and leae the room: a timeout 1-2 minutes.
+
+You are faster:
+- network latency
+- practice session for collaboation
+*/
+
+
+todo("Create new primitives (new version)");
+
+
+//todo("Add another primitive: comming soon. Make your object primitive. Other primites.");
+
+
+todo("An origanic shape: comming soon (make it gray, almost invisible)")
+.setSprint(w8)
+.priority(100)
+;
+
+
+todo("Make your object primitive.")
+.setSprint(w8)
+.priority(5)
+;
+
+todo("Comming soon icon: add constraint")
+.setSprint(w8)
+.priority(5)
+;
+
+todo("Comming soon icon: 1 ...")
+.setSprint(w8)
+.priority(5)
+;
+
+todo("Comming soon icon: 2 ...")
+.setSprint(w8)
+.priority(5)
+;
+/*
+Palette
+Material regions
+Support
+Slicer
+*/
+
+
+//todo("Support by user: requires a differnt material")
+//;
+
+
+todo("Choose printer: printers 2,3,4: commig soon")
+.setSprint(w8)
+.priority(5)
+;
+/*
+
+*/
+
