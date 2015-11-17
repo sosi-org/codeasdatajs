@@ -86,7 +86,9 @@ todo("Checkbox for list of constaints.")
 //todo("BoundingBox");
 
 
-todo("Ojects cannot be moved when looking from below the bed or below the move plane.");
+todo("Ojects cannot be moved when looking from below the bed or below the move plane.")
+.assignTo("antonio", "17 Nov 2015")
+.done("Complete");
 
 todo("Proper shadow.")
 .moreInfo("According to a threejs demo ...")
