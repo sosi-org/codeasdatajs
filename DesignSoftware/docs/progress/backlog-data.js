@@ -1528,6 +1528,20 @@ todo("A clicker button with a fixed tolerance. The tolerance should not change b
 ;
 
 todo("Rejection constraint: ax+by+cz+d >=0 . For example tolerance >= 0.01mm, size.x > 0.2mm, etc")
+.setSprint(w8)
 ;
 
-todo("Constraint categories: hard.autofix, hard.reject, soft.remind, ... (also: grid/snap forces)");
+todo("Constraint categories: hard.autofix, hard.reject, soft.remind, ... (also: grid/snap forces)")
+;
+
+
+todo("Initialise the buttons of environment setting according to the globalEnvrnState.properties (AngularJS)")
+.setSprint(w8)
+.assignTo("alican")
+;
+
+
+todo("Changing object annotations from menu should not unselect the object (AngularJS)")
+.setSprint(w8)
+;
+
