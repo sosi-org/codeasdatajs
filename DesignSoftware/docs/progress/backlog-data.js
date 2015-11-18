@@ -1519,3 +1519,15 @@ todo("Clicking on Hierarcy adds to pointableMeshes")
 todo("Rewrite the hierarchy. After refactoring the cRoot, getDict(), shapeFactory(), etc")
 .setSprint(w8)
 ;
+
+
+todo("Speak to Mario about the best practices for the reusable clicker button")
+;
+
+todo("A clicker button with a fixed tolerance. The tolerance should not change by scaling.")
+;
+
+todo("Rejection constraint: ax+by+cz+d >=0 . For example tolerance >= 0.01mm, size.x > 0.2mm, etc")
+;
+
+todo("Constraint categories: hard.autofix, hard.reject, soft.remind, ... (also: grid/snap forces)");
