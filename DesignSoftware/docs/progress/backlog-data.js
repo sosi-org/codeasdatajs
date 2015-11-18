@@ -1427,3 +1427,25 @@ todo("Choose printer: printers 2,3,4: commig soon")
 
 */
 
+
+
+todo("The mesh of the CSG should have random colour"); //separate colour
+
+todo("The shapetree object should have a separate display-color from its subclasses");
+
+todo("Atmosphere: per-clock: change of lightness, once per hour");
+
+todo("Theme is separate to Atmosphere");
+
+todo("Theme: sets all [default] materials. All constants should be taken from this. Even sizes.");
+
+todo("A \"theme\": for print preview. Sets all materials.");
+
+todo("A function that changes all materials");
+
+todo("Preview mode: tickbox. Affects: Menues, Collaboration, Material, Reminders, sizes of menues, Atmosphere, (maybe: collaboration)");
+
+
+todo("Brittle (Support) printer setting preset");
+
+todo("Fast, low z=0.2 print preset");
