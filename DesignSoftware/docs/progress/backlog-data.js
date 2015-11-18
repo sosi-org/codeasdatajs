@@ -1429,23 +1429,93 @@ todo("Choose printer: printers 2,3,4: commig soon")
 
 
 
-todo("The mesh of the CSG should have random colour"); //separate colour
+todo("The mesh of the CSG should have random colour") //separate colour
+.setSprint(w8)
+;
 
 todo("The shapetree object should have a separate display-color from its subclasses");
+.setSprint(w8)
+;
 
 todo("Atmosphere: per-clock: change of lightness, once per hour");
+.setSprint(w8)
+;
 
 todo("Theme is separate to Atmosphere");
+.setSprint(w8)
+;
 
-todo("Theme: sets all [default] materials. All constants should be taken from this. Even sizes.");
+todo("Theme: sets all [default] materials. All constants should be taken from this. Even sizes.")
+.setSprint(w8)
+;
 
-todo("A \"theme\": for print preview. Sets all materials.");
+todo("A \"theme\": for print preview. Sets all materials.")
+.setSprint(w8)
+;
 
-todo("A function that changes all materials");
+todo("A function that changes all materials (for print preview andthee)")
+.setSprint(w8)
+;
 
-todo("Preview mode: tickbox. Affects: Menues, Collaboration, Material, Reminders, sizes of menues, Atmosphere, (maybe: collaboration)");
+todo("Preview mode: tickbox. Affects: Menues, Collaboration, Material, Reminders, sizes of menues, Atmosphere, (maybe: collaboration)")
+.setSprint(w8)
+;
 
 
-todo("Brittle (Support) printer setting preset");
+todo("Brittle (Support) printer setting preset")
+//.setSprint(w8)
+;
 
-todo("Fast, low z=0.2 print preset");
+todo("Fast, low z=0.2 print preset")
+.setSprint(w8)
+;
+
+
+todo("Colour picker style should change to a flat design. This design looks too similar to another web app.")
+.setSprint(w8)
+;
+
+
+todo("Print issues is not correctly updated after aplying physics engine.")
+.setSprint(w8)
+;
+
+
+todo("start the prepare physics after CSG operations. (or with a 500msec delay (refactor period) from the last CSG operation)")
+.setSprint(w8)
+;
+
+todo("Use camera animtaion on usual camera movements (movements using mouse)")
+.setSprint(w8)
+;
+
+
+todo("Collab: Use AngularJS data binding instead of getElementById. Uncaught TypeError: Cannot set property 'innerHTML' of null. stream.js:198. Also: Uncaught TypeError: Cannot read property 'style' of null. stream.js:138")
+.assignTo("jean")
+.assignTo("alican")
+.setSprint(w8)
+.priority(100)
+;
+
+
+todo("Change the appearance of the camera buttons to a simpler design")
+.setSprint(w8)
+;
+
+
+todo("Embedding script: See togetherJS homepage")
+//.version(2)
+;
+
+todo("Clicking should create bubbles (to visualise clicks in collaboration mode). (Also for keyboard: separate task)")
+//.setSprint(w8)
+;
+
+todo("Clicking on Hierarcy adds to pointableMeshes")
+.setSprint(w8)
+;
+
+
+todo("Rewrite the hierarchy. After refactoring the cRoot, getDict(), shapeFactory(), etc")
+.setSprint(w8)
+;
