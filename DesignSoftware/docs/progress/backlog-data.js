@@ -1433,15 +1433,15 @@ todo("The mesh of the CSG should have random colour") //separate colour
 .setSprint(w8)
 ;
 
-todo("The shapetree object should have a separate display-color from its subclasses");
+todo("The shapetree object should have a separate display-color from its subclasses")
 .setSprint(w8)
 ;
 
-todo("Atmosphere: per-clock: change of lightness, once per hour");
+todo("Atmosphere: per-clock: change of lightness, once per hour")
 .setSprint(w8)
 ;
 
-todo("Theme is separate to Atmosphere");
+todo("Theme is separate to Atmosphere")
 .setSprint(w8)
 ;
 
@@ -1543,5 +1543,31 @@ todo("Initialise the buttons of environment setting according to the globalEnvrn
 
 todo("Changing object annotations from menu should not unselect the object (AngularJS)")
 .setSprint(w8)
+;
+
+
+
+
+todo("Unselect does not work well sometimes")
+.setSprint(w8)
+;
+
+
+todo("Errors (console) when collaboration is not used.")
+.setSprint(w8)
+;
+
+
+todo("Replay: buttons: rewind, pause, exit.")
+;
+
+
+todo("Indicator: replay. + [R] button")
+;
+
+todo("Indicator: constraint")
+;
+
+todo("Indicator: coollaboration conflict (+ Live icon)")
 ;
 
