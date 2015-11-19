@@ -114,11 +114,12 @@ todo("Upgrate (switch) to newest ThreeJS: r73")
 
 todo("Make the colour hightlight system consistent")
 .moreInfo("By changing colour all in one place.")
-.assignTo("alican");
-//.done("on Tuesday");
+.assignTo("alican")
+.done("completed");
 
 todo("Highlight colour for a reminders (lamp icon)")
-.assignTo("alican");
+.assignTo("alican")
+.done("completed");
 
 todo("Calculation of bounding boxes for shapes")
 .moreInfo("Analytical formulas for Bounding boxes. ")
@@ -185,6 +186,7 @@ todo("Properties bar sometimes shows exception. It should be redesigned. We need
 .assignTo("alican", "9 November 2015")
 .priority(1000)
 .setSprint(8)
+.done("completed")
 ;
 
 todo("CodeReview: The details of the implementations of the magnet should be revised.")
@@ -409,8 +411,8 @@ todo("Use the right pattern for notifying AngularJS (Observer pattern?).")
 .assignTo("alican")
 .setSprint(8)
 .isEpic()
-.inProgress()
 .id("Angular-trigger")
+.done("completed")
 ;
 
 todo("The simple callback pattern for notifying AngularJS. Needs code review")
