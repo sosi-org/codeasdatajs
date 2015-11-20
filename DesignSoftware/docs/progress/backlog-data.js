@@ -347,10 +347,22 @@ todo("CSG: Fix bugs about subtraction")
 .setSprint(8)
 .assignTo("vitaliy")
 .id("CSG-sub")
-.moreInfo("makeGroup() -> buildCSGMesh() -> buildCSG() ")
-.inProgress()
-.isBug()
+.moreInfo("The bug was not in CSG, but in duplicationSelected(). " +
+    "The meshes of new obj was not cloned, but was referring to the original meshes. The problem was there.")
+.actuallyTook(15*TIME_HOURS)
+.done("complete")
 ;
+
+
+todo("Write a new copy/clone using shapeTree.getDict() and shapeFactory(). Test it.")
+.setSprint(8)
+.assignTo("vitaliy")
+.moreInfo("Already wrote it. duplicateTreeOrShape(). Now in the middle of testing.")
+;
+
+
+
+
 
 
 todo("Remove object sometimes leaves the boundig box. In such cases, the Replay breaks.")
@@ -940,6 +952,7 @@ todo("Slicer: subtraction does not work")
 
 todo("Avoid using TreeDeepCopy, using getDict() instead")
 .setSprint(w8)
+.assignTo("vitaliy")
 ;
 
 todo("Hash using getDict()")
