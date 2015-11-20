@@ -1621,3 +1621,29 @@ todo("Check again if mesh in initializeMesh = function(mesh) is selectionBox. Al
 
 todo("Slowly find out the separation and relation between selectionBox, the selection class (in Api: Api in design), and the BBAnnotations class.")
 ;
+
+
+todo("Uncaught ReferenceError: interfaceCallbackManager is not defined. stream.js:164")
+.assignTo("jean");
+
+
+todo("New tool shows error when no object is selected. Show an alert 'select an object first'")
+;
+
+
+todo("The rotation of the a group of objects is simply incorrect! the locaiton is not rotated. The center of rotation should be a getter function of the selectionBox (or the selection class).")
+.priority(800)
+.assignTo("vitaliy")
+;
+
+
+todo(" selectionBox should be a class that has an instance only when multiple objects are selected (temporary group). Can be a TemporaryGroupShape, a type of ShapeTree?")
+;
+
+todo("(Maybe) selectionBox class: We may need to implement it using a temporary ShapeTree (a fourth type: Group), which preserves the rotation, etc during one annotation session. When we unselect and select again, the rotation AnnotDots (arcs, etc) are reset. But it is fine. MEthod. shapreTree.reflectTheAngle(). Sets the angle to zero and applies it to the children (private method). reflectAll -> size,angle,position.")
+;
+
+
+todo("The mouse navigation,etc sometimes freezes: It seems to happen when we use the 'tool'. It happens when the collisionDet function does not converge.")
+.assignTo("manon")
+;
