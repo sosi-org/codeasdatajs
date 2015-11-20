@@ -1613,3 +1613,7 @@ todo("SelectionBox class")
 ;
 
 todo("Make BB updates explicit and extract the method out.");
+
+
+todo("Check again if mesh in initializeMesh = function(mesh) is selectionBox. Also remove the if(mesh) from it.")
+;
