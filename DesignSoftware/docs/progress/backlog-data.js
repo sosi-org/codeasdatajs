@@ -1561,15 +1561,55 @@ todo("Errors (console) when collaboration is not used.")
 
 
 todo("Replay: buttons: rewind, pause, exit.")
+.setSprint(w8)
 ;
 
 
 todo("Indicator: replay. + [R] button")
+.setSprint(w8)
 ;
 
 todo("Indicator: constraint")
+.setSprint(w8)
 ;
 
 todo("Indicator: coollaboration conflict (+ Live icon)")
 ;
 
+
+
+todo("find occurances of graphMesh.position and .scale, and remove them. if used in physJS only, put them in physMeshToShape. Also another function: postPhysiSimulate where it also sets the velocities (after some delay).")
+.setSprint(w8)
+;
+
+todo("Start preparing the Physi-JS at the right time. Use a delay. Stop (interrupt) the old preparation if a new preparation is started.")
+.setSprint(w8)
+;
+
+
+todo("replay buttons on view screen on homepage (view mode).")
+.setSprint(w8)
+.priority(5)
+;
+
+
+todo("function addMeshesRec() : Document. For what purpose should it be called?")
+;
+
+todo("Sometimes objects 'move' ! when multiple objects are selected using Control+Click")
+.priority(400)
+;
+
+todo("Sometimes all of the group is unselected when selected using Control+Click")
+.priority(400)
+;
+
+
+todo("Why is mesh used in updateDot? Isn't mesh.position enough?")
+;
+
+
+todo("SelectionBox class")
+;
+
+todo("Make BB updates explicit and extract the method out.");
