@@ -1661,3 +1661,8 @@ todo("(Maybe) selectionBox class: We may need to implement it using a temporary 
 todo("The mouse navigation,etc sometimes freezes: It seems to happen when we use the 'tool'. It happens when the collisionDet function does not converge.")
 .assignTo("manon")
 ;
+
+
+
+todo("Fix the arguments of addToSelection(true); in function setExamine().")
+;
