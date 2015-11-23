@@ -208,6 +208,7 @@ todo("Check why the project name is incorrect after refreshing, but it is known 
 .assignTo("alican", "9 November 2015")
 .priority(10)
 .setSprint(8)
+.done("completed")
 ;
 
 todo("Move root.js into src/shapes folder")
