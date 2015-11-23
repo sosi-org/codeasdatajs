@@ -355,10 +355,11 @@ todo("CSG: Fix bugs about subtraction")
 ;
 
 
-todo("Write a new copy/clone using shapeTree.getDict() and shapeFactory(). Test it.")
+todo("Write a new copy/clone using shapeTree.getDict() and shapeFactory(). Tested it.")
 .setSprint(8)
 .assignTo("vitaliy")
-.moreInfo("Already wrote it. duplicateTreeOrShape(). Now in the middle of testing.")
+.done("complete")
+.actuallyTook(7*TIME_HOURS)
 ;
 
 
