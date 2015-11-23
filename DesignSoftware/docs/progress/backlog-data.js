@@ -469,7 +469,7 @@ todo("Check if isShape() is logically the opposite of isTree(). Refactor: mutual
 
 todo("Hierarchy full revision and refactoring.")
 .after(t_refroot)
-.moreInfo("tempRoot, etc.")
+.moreInfo("temp_originalRoot (used to be called: tempRoot), etc.")
 //.sprint(???)  //plan for sprint.  plan for user-sequence. plan for CPM.
 .setSprint(w8)
 ;
