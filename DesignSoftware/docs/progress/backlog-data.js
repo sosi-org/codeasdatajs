@@ -1672,3 +1672,5 @@ todo("Fix the arguments of addToSelection(true); in function setExamine().")
 todo("The feature 'unselect after a while' should be active only during collaboration");
 
 
+todo("The 'touch' and 'grab' should not change colour during an annotation [drag] session. Deactivate touchState during the annotation drag.")
+;
