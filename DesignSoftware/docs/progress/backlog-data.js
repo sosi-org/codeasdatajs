@@ -1667,3 +1667,8 @@ todo("The mouse navigation,etc sometimes freezes: It seems to happen when we use
 
 todo("Fix the arguments of addToSelection(true); in function setExamine().")
 ;
+
+
+todo("The feature 'unselect after a while' should be active only during collaboration");
+
+
