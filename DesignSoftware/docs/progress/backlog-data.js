@@ -504,7 +504,7 @@ todo("New annotation class: Annotations should be according to the orientation (
 ;
 
 
-todo("SelectionMesh should be in a separate class, a Selection class maybe. As a member of the selection class?")
+todo("SelectionMesh should be in a separate class, a cSelection class maybe. As a member of the selection class?")
 .setSprint(w8)
 ;
 
@@ -1022,7 +1022,7 @@ todo("Use exceptions everywhere")
 .setSprint(w8)
 ;
 
-todo("A Selection class")
+todo("A cSelection class")
 .setSprint(w8)
 ;
 
