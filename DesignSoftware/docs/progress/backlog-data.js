@@ -1674,3 +1674,6 @@ todo("The feature 'unselect after a while' should be active only during collabor
 
 todo("The 'touch' and 'grab' should not change colour during an annotation [drag] session. Deactivate touchState during the annotation drag.")
 ;
+
+
+//Annotations size should be updated by changing the object or camera
