@@ -1677,3 +1677,15 @@ todo("The 'touch' and 'grab' should not change colour during an annotation [drag
 
 
 //Annotations size should be updated by changing the object or camera
+
+
+
+
+
+
+// **************************************
+// *   Alpha launch urgent todo list    *
+
+todo("remove the 'Partner-key' from github. It should not be accessible to public. It should be moved into the deploy script. The deploy script has to be in github. This key should be read from a file or ENV variable on the EC2 machine.");
+
+todo("What is MD5");
