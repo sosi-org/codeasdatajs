@@ -462,7 +462,7 @@ todo("Use exceptions handing for impossible movements becasue of constriants.")
 .setSprint(w8)
 ;
 
-todo("Check if isShape() is logically the opposite of isTree(). Refactor: mutually exclusive categories.")
+todo("Check if isSingleShape() is logically the opposite of isTree(). Refactor: mutually exclusive categories.")
 .setSprint(w8)
 ;
 
