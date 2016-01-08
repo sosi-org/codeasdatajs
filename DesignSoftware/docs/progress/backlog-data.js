@@ -262,13 +262,13 @@ todo("Timing of rendering (Render request)") .id("timing:render")
 .setSprint(8)
 ;
 
-todo("Timing of updateScene (update meshes)")   .id("timing:updateMesh_recursive")
+todo("Timing of updateScene (update meshes)")   .id("timing:updateMeshFromShape_recursive")
 .after(getTask("timing:render"))
 .setSprint(8) //exclusive
 ;
 
 todo("Timing of preparePhys")   .id("timing:physprepare")
-.after(getTask("timing:updateMesh_recursive"))
+.after(getTask("timing:updateMeshFromShape_recursive"))
 .setSprint(8)
 .assignTo("sohail") //exclusive
 ;
