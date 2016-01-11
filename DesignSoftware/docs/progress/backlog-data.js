@@ -1608,7 +1608,7 @@ todo("replay buttons on view screen on homepage (view mode).")
 ;
 
 
-todo("function addMeshesRec() : Document. For what purpose should it be called?")
+todo("function addSingleMeshes_recursively() : Document. For what purpose should it be called?")
 ;
 
 todo("Sometimes objects 'move' ! when multiple objects are selected using Control+Click")
