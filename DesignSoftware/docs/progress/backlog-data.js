@@ -106,7 +106,7 @@ todo("KKT for constraints")
 .toBacklog();
 
 
-todo("Implement Shape3D.updateBoundingBox() and Shape3D.boundingBox")
+todo("Implement SingleShape3D.updateBoundingBox() and SingleShape3D.boundingBox")
 .id("shape.bb");
 
 todo("Upgrate (switch) to newest ThreeJS: r73")
@@ -155,7 +155,7 @@ todo("Slicer: Comand line mode")
 .codeReview("sohail", "??Nov 2015", "can use files from any folder. But sould not replace an existing file. Todo: dont use --input=")
 ;
 
-todo("Refactror the base field for Shape3D.")
+todo("Refactror the base field for SingleShape3D.")
 .moreInfo("rotations are simple fields ax ay az")
 .assignTo("vitaliy", "? November 2015")
 .setSprint(7)
@@ -234,7 +234,7 @@ todo("Run the designer (setup git, python3, server.py)")
 ;
 
 
-todo("makeMesh: Find a pattern for making each Shape3D in generation.js")
+todo("makeMesh: Find a pattern for making each SingleShape3D in generation.js")
 .assignTo("sohail", "10 November 2015")
 .setSprint(8)
 ;
