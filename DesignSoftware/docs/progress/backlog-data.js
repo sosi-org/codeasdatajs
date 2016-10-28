@@ -69,7 +69,7 @@ todo("A simple linear constraint system.", "Dont remove the dep argument yet")
 //.parentTask( lookup("m12"))
 ;
 
-todo("Slicer prints lines instead of Arcs")
+todo("mp5slicer prints lines instead of Arcs")
 .assignTo("orial")
 .setSprint(8) //start or stop?
 .inProgress("2 Nov 2015  ???")
@@ -146,7 +146,7 @@ todo("Install a NodeJS Docker image")
 .done("docker file is made but not linux script")
 ;
 
-todo("Slicer: Comand line mode")
+todo("mp5slicer: Comand line mode")
 .moreInfo("mp5slice.py")
 .assignTo("vitaliy", "? November 2015")
 .setSprint(7)
@@ -669,7 +669,7 @@ todo("Node.js 'run' script (not the dockerfile)")
 .setSprint(w8)
 ;
 
-todo("Slicer ignores subtractions")
+todo("mp5slicer ignores subtractions")
 //.addedAt is deprecated
 // addedAt 17 Nov 2015
 .assignTo("orial")
@@ -677,12 +677,12 @@ todo("Slicer ignores subtractions")
 ;
 
 
-todo("Slicer: Identify cause of moles")
+todo("mp5slicer: Identify cause of moles")
 .setVersion(2)
 .setSprint(w8)
 ;
 
-todo("Slicer: tip of the cone is a disaster.")
+todo("mp5slicer: tip of the cone is a disaster.")
 .setSprint(w8)
 ;
 
@@ -779,7 +779,7 @@ todo("make view.html an angularJS directive (or Django component).")
 .setSprint(w8)
 ;
 
-todo("A second separate server software using Django (3 softwares: slicer, django-slicer, django web server, js-client)")
+todo("A second separate server software using Django (3 softwares: mp5slicer, django-mp5slicer, django web server, js-client)")
 .setSprint(w8)
 ;
 
@@ -946,7 +946,7 @@ todo("New shape: empty & cut cone: Outersize-bottom, outersize-top, thickness")
 //version 2
 ;
 
-todo("Slicer: subtraction does not work")
+todo("mp5slicer: subtraction does not work")
 .setSprint(w8)
 .priority(50)
 ;
@@ -1428,7 +1428,7 @@ todo("Comming soon icon: 2 ...")
 Palette
 Material regions
 Support
-Slicer
+slicer
 */
 
 
